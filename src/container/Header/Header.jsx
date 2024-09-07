@@ -11,7 +11,7 @@ const Header = () => (
     <div className="app__wrapper_info">
     <SubHeading title ="Chase the new flavour"/>
     <h1 className = "app__header-h1">The Leading Champion of Jjamppong Franchises</h1>
-    <p className ="p__opensans" style={{margin: '2rem 0'}}>The Leading Champion of Jjamppong FranchisesThe Leading Champion of Jjamppong FranchisesThe Leading Champion of Jjamppong FranchisesThe Leading Champion of Jjamppong FranchisesThe Leading Champion of Jjamppong Franchises</p>
+    <p className ="p__cormorant" style={{color: 'White', margin: '2rem 0'}}>Discover the unique and flavorful experience that sets us apart. Join us and taste the difference!</p>
     <button type="button" className="custom__button">Explore More</button>
     </div>
     <div className="app__wrapper_img">

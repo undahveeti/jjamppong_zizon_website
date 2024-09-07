@@ -1,5 +1,6 @@
 .app__header {
-    background-color: var(--color-black)
+    background-color: var(--color-fire);
+    padding: 2rem;
 }
 
 .app__header-h1 {
@@ -7,10 +8,11 @@
     color: var(--color-golden);
 
     letter-spacing: 0.04em;
-    text-transform: uppercase;
+    text-transform: full-size-kana;
 
-    line-height: 117px;
-    font-size: 90px;
+    line-height: 1.2;
+    font-size: 4rem;
+    margin-bottom: 1rem;
 }
 
 .app__header-img img{
