@@ -15,16 +15,16 @@ const Navbar = () => {
               <img src={images.zizon} alt = "app logo"/>
             </div>
             <ul className = "app__navbar-links"> 
-              <li className = "p__spicy" ><a href="#home">Home</a></li>
-              <li className = "p__spicy"><a href="#about">About</a></li>
-              <li className = "p__spicy"><a href="#menu">Menu</a></li>
-              <li className = "p__spicy"><a href="#awards">Awards</a></li>
-              <li className = "p__spicy"><a href="#contact">Contact</a></li>
+              <li className = "p__original" ><a href="#home">Home</a></li>
+              <li className = "p__original"><a href="#about">About</a></li>
+              <li className = "p__original"><a href="#menu">Menu</a></li>
+              <li className = "p__original"><a href="#awards">Awards</a></li>
+              <li className = "p__original"><a href="#contact">Contact</a></li>
             </ul>
             <div className = "app__navbar-login">
-              <a href="#login" className = "p__spicy"> Log In / Register </a>
+              <a href="#login" className = "p__original"> Log In / Register </a>
               <div/>
-                <a href="/" className = "p__spicy"> Book Table </a>
+                <a href="/" className = "p__original"> Book Table </a>
               
             </div>
             <div className = "app__navbar-smallscreen">

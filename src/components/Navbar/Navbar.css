@@ -3,7 +3,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--color-white);
+    background-image: url('../../assets/header.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     padding: 1rem 2rem;
 } 

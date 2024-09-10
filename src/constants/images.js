@@ -1,4 +1,4 @@
-import bg from '../assets/bg.png';
+import bg from '../assets/bg2.png';
 import chef from '../assets/chef.png';
 import G from '../assets/G.png';
 import gallery01 from '../assets/gallery01.png';
@@ -21,6 +21,8 @@ import sign from '../assets/sign.png';
 import quote from '../assets/quote.png';
 import gericht from '../assets/gericht.png';
 import zizon from '../assets/zizon.PNG';
+import chilis from '../assets/chilis.PNG'
+
 
 export default {
   bg,
@@ -46,4 +48,5 @@ export default {
   quote,
   gericht,
   zizon,
+  chilis,
 };
