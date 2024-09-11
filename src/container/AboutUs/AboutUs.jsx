@@ -7,7 +7,7 @@ import './AboutUs.css';
 import { SubHeading } from '../../components';
 
 const Header = () => (
-  <div className="app__about app__wrapper section__padding" id="home">
+  <div className="app__about app__wrapper section__padding" id="about">
     <div className="app__wrapper_img">
       <img src={images.chilis} alt = "chilis img"/>
 
