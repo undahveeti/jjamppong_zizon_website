@@ -22,9 +22,11 @@ import quote from '../assets/quote.png';
 import gericht from '../assets/gericht.png';
 import zizon from '../assets/zizon.PNG';
 import chilis from '../assets/chilis.PNG'
+import about from '../assets/about.PNG';
 
 
 export default {
+  about,
   bg,
   chef,
   G,

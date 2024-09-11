@@ -1,35 +1,26 @@
 import React from 'react';
-import {images} from '../../constants';
+
+import { images } from '../../constants';
+
 import './AboutUs.css';
+ 
+import { SubHeading } from '../../components';
 
+const Header = () => (
+  <div className="app__about app__wrapper section__padding" id="home">
+    <div className="app__wrapper_img">
+      <img src={images.chilis} alt = "chilis img"/>
 
-
-const AboutUs = () => (
-  <div className="app__aboutus app__bg flex__center section__padding" id="about">
-    <div className="app__aboutus-overlay flex__center">
-      <img src={images.chilis} alt="chilis_overlay" />
     </div>
+    <div className="app__wrapper_info">
+      <h1 className = "app__about-h1">About Us</h1>
+      <p className ="p__spicy" style={{color: 'white', margin: '2rem 0'}}>Discover South Korea's Premier Spicy Noodle Experience with over 100 Locations Nationwide. At our heart lies a passion for vibrant flavors, which is why we handpick only the finest red peppers, sourced for their fiery zest and harvested at the pinnacle of ripeness. This meticulous selection fuels the distinctive, robust flavor of our 100% natural Goobne pepper sauce—a cornerstone of our culinary offerings.
 
-    <div className="app__aboutus-content flex__center">
-      <div className="app__aboutus-content_about">
-        <h1 className="headtext__cormorant">About Us</h1>
-        <img src={images.spoon} alt="about_spoon" className="spoon__img" />
-        {/*<p className="p__spicy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis pharetra adipiscing ultrices vulputate posuere tristique. In sed odio nec aliquet eu proin mauris et.</p>*/}
-        <button type="button" className="custom__button">Know More</button>
-      </div>
-
-      <div className="app__aboutus-content_knife flex__center">
-        <img src={images.knife} alt="about_knife" />
-      </div> 
-
-      <div className="app__aboutus-content_history">
-        <h1 className="headtext__cormorant">Updated News</h1>
-        <img src={images.spoon} alt="about_spoon" className="spoon__img" />
-        {/*<p className="p__opensans">Adipiscing tempus ullamcorper lobortis odio tellus arcu volutpat. Risus placerat morbi volutpat habitasse interdum mi aliquam In sed odio nec aliquet.</p>*/}
-        <button type="button" className="custom__button">Know More</button>
-      </div>
+Every bowl promises a journey of taste, crafted from ingredients that are nurtured from seed to sauce, ensuring each dish not only tingles your palate but also meets the highest standards of quality. Join us for an unforgettable adventure in flavor, where traditional craftsmanship meets the fiery essence of Korea.</p>
+          {/* security reasons when opening potential vulernabilities */}
+  
     </div>
   </div>
 );
 
-export default AboutUs;
+export default Header;

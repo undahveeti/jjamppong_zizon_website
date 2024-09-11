@@ -1,60 +1,35 @@
-.app__aboutus {
-    background-color: #f4f4f4; /* example background color */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 50px 0;
-  }
-  
-  .app__aboutus-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px; /* Control the max width for better aesthetics */
-  }
-  
-  .app__aboutus-overlay {
-    width: 40%; /* Adjust based on preference */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .restaurant__img {
-    width: 100%;
-    height: auto;
-    display: block; /* Ensures no extra space around the image */
-  }
-  
-  .app__aboutus-content_about, .app__aboutus-content_history {
-    width: 30%; /* Adjust based on preference */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .headtext__cormorant {
-    margin-bottom: 20px;
-  }
-  
-  .spoon__img {
-    margin-bottom: 20px;
-  }
-  
-  .custom__button {
-    /* Button styles here */
-  }
-  
-  @media (max-width: 768px) {
-    .app__aboutus-content {
-      flex-direction: column;
+.app__about {
+    background-color: var(--color-fire);
+    background-image: var(--color-fire);
+    background-size: 10px;
+    padding: 1rem;
+}
+
+.app__about-h1 {
+    font-family: var(--font-base);
+    color: var(--color-golden);
+
+    letter-spacing: 0.04em;
+    text-transform: full-size-kana;
+
+    line-height: 1.2;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.app__wrapper_img img{
+    width: 80%;
+
+    border: 5px solid var(--color-golden);
+    padding:10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0, 0.2);
+    transition: transform 0.3s ease-in-out; 
+}
+
+@media (max-width: 768px) {
+    .app__header-h1 {
+        font-size: 50px;  /* Decrease font size */
+        line-height: 70px; /* Decrease line height */
     }
-  
-    .app__aboutus-content_about, .app__aboutus-content_history, .app__aboutus-overlay {
-      width: 80%; /* More suitable for mobile */
-      margin-bottom: 20px;
-    }
-  }
-  
+}
