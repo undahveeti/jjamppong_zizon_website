@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {GiHamburgerMenu} from 'react-icons/gi';
-import {MdOutlineRestaurantMenu} from 'react-icons/md';
+import {MdOutlineRestaurant} from 'react-icons/md';
 
 import images from '../../constants/images';
 
@@ -21,17 +21,17 @@ const Navbar = () => {
               <li className = "p__original"><a href="#awards">Awards</a></li>
               <li className = "p__original"><a href="#contact">Contact</a></li>
             </ul>
-            <div className = "app__navbar-login">
+            {/*<div className = "app__navbar-login">
               <a href="#login" className = "p__original"> Log In / Register </a>
               <div/>
                 <a href="/" className = "p__original"> Book Table </a>
               
-            </div>
+            </div>*/}
             <div className = "app__navbar-smallscreen">
-              <GiHamburgerMenu color ="#B22222" fontSize = {27} onClick ={() => setToggleMenu(true)}/>
+              <GiHamburgerMenu color = "white" fontSize = {27} onClick ={() => setToggleMenu(true)}/>
                 {toggleMenu && (
                 <div className = "app__navbar-smallscreen_overlay flex__center slide-bottom">
-                  <MdOutlineRestaurantMenu fontSize={27} className = "overlay_close" onClick={() => setToggleMenu(false)} />
+                  <MdOutlineRestaurant fontSize={27} className = "overlay_close" onClick={() => setToggleMenu(false)} />
                   <ul className = "app__navbar-smallscreen_links"> 
                     <li className = "p__spicy"><a href="#home">Home</a></li>
                     <li className = "p__spicy"><a href="#about">About</a></li>

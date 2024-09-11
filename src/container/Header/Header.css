@@ -1,11 +1,12 @@
 .app__header {
-    background-color: var(--color-fire);
-    padding: 2rem;
+    background-image: var(--color-fire);
+    background-size: 10px;
+    padding: 1rem;
 }
 
 .app__header-h1 {
     font-family: var(--font-base);
-    color: var(--color-golden);
+    color: var(--color-fire);
 
     letter-spacing: 0.04em;
     text-transform: full-size-kana;
@@ -15,8 +16,14 @@
     margin-bottom: 1rem;
 }
 
-.app__header-img img{
+.app__wrapper_img img{
     width: 80%;
+
+    border: 5px solid var(--color-golden);
+    padding:10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0, 0.2);
+    transition: transform 0.3s ease-in-out; 
 }
 
 @media (max-width: 768px) {
@@ -25,3 +32,4 @@
         line-height: 70px; /* Decrease line height */
     }
 }
+
