@@ -3,12 +3,12 @@ import React from 'react';
 import './Newsletter.css';
 import SubHeading from '../SubHeading/SubHeading';
 
-const Newsletter = () => (
-  <div className="app__newsletter">
+ const Newsletter = () => (
+ <div className="app__newsletter app__bg">
     <div className = "app__newsletter-heading">
       <SubHeading title="Newsletter"/>
-      <h1 className="headtext__cormorant">Subscribe To Our Newsletter</h1>
-      <p className = "p__opensans"> And never miss latest updates!</p>
+      <h1 className="headtext__cormorant" >Subscribe To Our Newsletter</h1>
+      <p className = "p__spicy"> And never miss latest updates!</p>
     </div>
     <div className = "app__newsletter-input flex__center">
       <input type= "email" placeholder='Enter your email address'/>

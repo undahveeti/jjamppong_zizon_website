@@ -1,86 +1,76 @@
 .app__specialMenu {
-    flex-direction: column;
-    
-}
-
-.app__specialMenu-title {
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.app__specialMenu-menu {
-    width: 100%;
-    margin: 2rem 0;
-
+ /* Adjust the background as needed */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+     /* Adjust the background as needed */
+    padding: 40px;
+  }
+  
+  .app__specialMenu-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-gold); /* Adjust the title color */
+  }
+  
+  .app__specialMenu-content {
+    display: flex;
+    justify-content: space-between;
     align-items: flex-start;
-    flex-direction: row;
-}
-
-.app__specialMenu-menu_headings {
+    width: 100%;
+  }
+  
+  .app__specialMenu-menu_options {
+    flex: 1;
+    padding-right: 20px; /* Space between the menu and the image */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the drink items */
+  }
+  
+  .app__specialMenu-menu_headings {
     font-family: var(--font-base);
     font-weight: 600;
-    font-size: 45px;
-    line-height: 58.5px;
-    letter-spacing: 0.04em;
-    color: var(--color-white);
-}
-
-.app__specialMenu-menu_wine,
-.app__specialMenu-menu_cocktails {
+    font-size: 40px; /* Increased the size of headings */
+    color: var(--color-gold);
+    margin-bottom: 2rem;
+    text-align: center; /* Center the headings */
+  }
+  
+  .app__specialMenu-menu_items {
+    margin-bottom: 2rem;
+    color: var(--color-fire);
+    line-height: 2;
+    font-size: 24px; /* Increased the size of drink items */
+    text-align: center; /* Center the drink items */
+  }
+  
+  .app__specialMenu-menu_img {
     flex: 1;
-    width: 100%;
-    flex-direction: column;
-}
-
-.app__specialMenu-menu_img {
-    width: 410px;
-    margin: 0 2rem;
-}
-
-.app__specialMenu-menu_img img {
-    width: 100%;
-    height: auto;
-}
-
-.app__specialMenu_menu_items {
     display: flex;
-    flex-direction: column;
-
-    margin: 2rem 0;
+    justify-content: flex-end; /* Push the image to the right */
+  }
+  
+  .app__specialMenu-menu_img img {
     width: 100%;
-}
-
-@media screen and (min-width: 2000px) {
-    .app__specialMenu-menu_img {
-        width: 650px;
+    max-width: 400px; /* Adjust the image size */
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Responsive for smaller screens */
+  @media screen and (max-width: 768px) {
+    .app__specialMenu-content {
+      flex-direction: column;
+      align-items: center;
     }
-
+  
+    .app__specialMenu-menu_options {
+      padding-right: 0;
+      margin-bottom: 2rem;
+    }
+  
     .app__specialMenu-menu_img img {
-        height: 920px;
+      max-width: 150%;
     }
-}
-
-@media screen and (max-width: 1150px) {
-    .app__specialMenu-menu {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .app__specialMenu-menu_img {
-        margin: 3rem 0;
-    }
-}
-
-@media screen and (max-width: 650px) {
-    .app__specialMenu-menu_img {
-        width: 100%;
-    }
-
-    .app__specialMenu-menu_heading {
-        font-size: 35px;
-        line-height: 48.5px;
-    }
-}
+  }
+  

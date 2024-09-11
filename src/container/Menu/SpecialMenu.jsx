@@ -1,40 +1,32 @@
 import React from 'react';
-
 import './SpecialMenu.css';
-
-import {images, data} from '../../constants';
-
-import { SubHeading, MenuItem } from '../../components';
+import { images } from '../../constants';
 
 const SpecialMenu = () => (
-  <div className = "app__specialMenu flex__center section__padding" id = "menu">
-    <div className = "app__specialMenu-title">
-      <SubHeading title="Menu that fits your palatte"/ >
-      <h1 className = "headtext__cormorant">Today's Special</h1>
+  <div className="app__specialMenu app__bg flex__center section__padding" id="menu">
+    <div className="app__specialMenu-title">
+      <h1 className="headtext__cormorant">Drinks & Beverages</h1>
     </div>
-    <div className = "app__specialMenu-menu">
-      <div className = "app__specialMenu-menu_wine flex__center">
-        <p className = "app__specialMenu-menu_headings">Wine & Beer</p>
-        <div className = "app__specialMenu-menu_items">
-          {data.wines.map((wine, index) => (
-            <MenuItem key={wine.title + index} title={wine.title} price={wine.price} tags={wine.tags}/>
-          ))}
+    <div className="app__specialMenu-content">
+      {/* Left side with drink options */}
+      <div className="app__specialMenu-menu_options">
+        <div className="app__specialMenu-menu_wine">
+          <p className="app__specialMenu-menu_headings"></p>
+          <div className="app__specialMenu-menu_items">
+            <p>Chardonnay - $12</p>
+            <p>Cabernet Sauvignon - $14</p>
+            <p>IPA - $8</p>
+            <p>Lager - $7</p>
+            <p>Merlot - $13</p>
+            <p>Pinot Grigio - $11</p>
+          </div>
         </div>
       </div>
-      <div className = "app__specialMenu-menu_img">
-          <img src = {images.menu} alt = "menu_img"/>
+
+      {/* Right side with an image */}
+      <div className="app__specialMenu-menu_img">
+        <img src={images.menu} alt="menu_img" />
       </div>
-      <div className = "app__specialMenu-menu_cocktails flex__center">
-        <p className = "app__specialMenu-menu_headings">Cocktails</p>
-        <div className = "app__specialMenu-menu_items">
-          {data.cocktails.map((cocktail, index) => (
-            <MenuItem key={cocktail.title + index} title={cocktail.title} price={cocktail.price} tags={cocktail.tags}/>
-          ))}
-        </div>
-      </div>
-    </div>
-    <div style={{marginTop: '15px'}}>
-      <button type = "button" className = "custom__button">View More</button>
     </div>
   </div>
 );
