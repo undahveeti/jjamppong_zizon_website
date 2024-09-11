@@ -1,15 +1,17 @@
 .app__specialMenu {
- /* Adjust the background as needed */
+    background: var(--color-background);
     display: flex;
     flex-direction: column;
-     /* Adjust the background as needed */
     padding: 40px;
   }
   
   .app__specialMenu-title {
     text-align: center;
     margin-bottom: 2rem;
-    color: var(--color-gold); /* Adjust the title color */
+    color: var(--color-gold);
+    font-family: 'Cormorant', serif;
+    font-size: 48px;
+    letter-spacing: 1px;
   }
   
   .app__specialMenu-content {
@@ -21,40 +23,41 @@
   
   .app__specialMenu-menu_options {
     flex: 1;
-    padding-right: 20px; /* Space between the menu and the image */
+    padding-right: 40px; /* Increase padding for better separation */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the drink items */
+    justify-content: center;
+    align-items: flex-start;
   }
   
-  .app__specialMenu-menu_headings {
-    font-family: var(--font-base);
-    font-weight: 600;
-    font-size: 40px; /* Increased the size of headings */
-    color: var(--color-gold);
-    margin-bottom: 2rem;
-    text-align: center; /* Center the headings */
-  }
-  
-  .app__specialMenu-menu_items {
-    margin-bottom: 2rem;
+  .app__specialMenu-menu_items p {
+    font-family: 'Georgia', serif;
+    font-size: 22px;
+    font-weight: 500;
     color: var(--color-fire);
     line-height: 2;
-    font-size: 24px; /* Increased the size of drink items */
-    text-align: center; /* Center the drink items */
+    margin-bottom: 1rem;
+    text-align: left; /* Align items to the left */
+  }
+  
+  .app__specialMenu-menu_items span {
+    float: right; /* Align prices to the right */
+    font-weight: bold;
+    color: var(--color-gold);
   }
   
   .app__specialMenu-menu_img {
     flex: 1;
     display: flex;
-    justify-content: flex-end; /* Push the image to the right */
+    justify-content: flex-end;
   }
   
   .app__specialMenu-menu_img img {
     width: 100%;
-    max-width: 400px; /* Adjust the image size */
+    max-width: 400px;
     height: auto;
     border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
   }
   
   /* Responsive for smaller screens */
@@ -67,10 +70,15 @@
     .app__specialMenu-menu_options {
       padding-right: 0;
       margin-bottom: 2rem;
+      align-items: center; /* Center on small screens */
+    }
+  
+    .app__specialMenu-menu_items p {
+      text-align: center;
     }
   
     .app__specialMenu-menu_img img {
-      max-width: 150%;
+      max-width: 80%; /* Reduce image size for smaller screens */
     }
   }
   

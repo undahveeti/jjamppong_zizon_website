@@ -1,10 +1,10 @@
 import bg from '../assets/bg.png';
 import chef from '../assets/chef.png';
 import G from '../assets/G.png';
-import gallery01 from '../assets/gallery01.png';
-import gallery02 from '../assets/gallery02.png';
-import gallery03 from '../assets/gallery03.png';
-import gallery04 from '../assets/gallery04.png';
+import gallery01 from '../assets/gallery01.PNG';
+import gallery02 from '../assets/gallery02.PNG';
+import gallery03 from '../assets/gallery03.PNG';
+import gallery04 from '../assets/gallery04.PNG';
 import knife from '../assets/knife.png';
 import logo from '../assets/logo.png';
 import menu from '../assets/menu.png';
@@ -23,9 +23,13 @@ import gericht from '../assets/gericht.png';
 import zizon from '../assets/zizon.PNG';
 import chilis from '../assets/chilis.PNG'
 import about from '../assets/about.PNG';
+import sale from '../assets/sale.png';
+import twitter from '../assets/twitter.png';
 
 
 export default {
+  twitter,
+  sale,
   about,
   bg,
   chef,

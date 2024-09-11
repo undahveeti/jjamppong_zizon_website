@@ -56,7 +56,7 @@ const FoodMenu = () => {
   };
 
   return (
-    <div className="app__FoodMenu app__bg flex__center section__padding" id="menu">
+    <div className="app__FoodMenu flex__center section__padding" id="menu">
       <div className="app__FoodMenu-title">
         <h1 className="headtext__cormorant">Noodles, Soups, and Dishes</h1>
       </div>

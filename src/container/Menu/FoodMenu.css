@@ -1,5 +1,5 @@
 .app__FoodMenu {
-    
+    background-color: var(--color-fire);
     flex-direction: column;
     padding: 40px;
 }

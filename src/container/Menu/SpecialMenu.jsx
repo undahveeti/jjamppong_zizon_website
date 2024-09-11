@@ -11,14 +11,11 @@ const SpecialMenu = () => (
       {/* Left side with drink options */}
       <div className="app__specialMenu-menu_options">
         <div className="app__specialMenu-menu_wine">
-          <p className="app__specialMenu-menu_headings"></p>
           <div className="app__specialMenu-menu_items">
-            <p>Chardonnay - $12</p>
-            <p>Cabernet Sauvignon - $14</p>
-            <p>IPA - $8</p>
-            <p>Lager - $7</p>
-            <p>Merlot - $13</p>
-            <p>Pinot Grigio - $11</p>
+            <p>Soju (Chamisul, Chum-Churum, Jinro) <span>$7.0</span></p>
+            <p>Beer (Terra, Cass) <span>$7.0</span></p>
+            <p>Cola 500ml <span>$3.0</span></p>
+            <p>Cider 500ml <span>$3.0</span></p>
           </div>
         </div>
       </div>

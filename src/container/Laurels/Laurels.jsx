@@ -1,35 +1,58 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import './Laurels.css'; // Import custom styles for the page
 
-import {images, data} from '../../constants';
+import saleImage from '../../assets/sale.png';
+import twitterImage from '../../assets/twitter.png';
 
-import { SubHeading } from '../../components';
+const Laurels = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const newsData = [
+    {
+      image: twitterImage, // Replace with your image URL
+      title: 'We\'re turning the heat up!',
+      description: 'Eater LA covers our summer opening!',
+      link: 'https://la.eater.com/2024/6/3/24170495/jjamppong-zizon-korean-noodle-chain-los-angeles-koreatown?utm_source=eater-twitter&utm_medium=social&utm_campaign=eater-dashhudson&utm_content=eater-national-twitter', // Example link
+    },
+    {
+      image: saleImage, // Replace with your image URL
+      title: 'Craving the perfect comfort meal?',
+      description: 'Our delicious Jjangmyeon is on special sale! 7 days a week!',
+      link: 'https://www.instagram.com/p/C_OPb3sPrTX/', // Example link
+    },
+  ];
 
-import './Laurels.css';
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === newsData.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000); // Flip every 3 seconds
 
-const AwardCard = ({award: { imgUrl, title, subtitle}}) => (
-  <div className = "app__laurels_awards-card">
-    <img src = {imgUrl} alt="award"/>
-    <div className= "app__laurels_awards-card_content">
-      <p className= "p_spicy" style={{color: '#DCCA87'}}>{title}</p>
-      <p className= "p_spicy" style={{color: 'red'}}>{subtitle}</p>
+    return () => clearInterval(interval);
+  }, [newsData.length]);
+
+  return (
+    <div className="news-gallery app__bg" id="news">
+      <a
+        href={newsData[currentIndex].link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="news-link"
+      >
+        <div className="news-container">
+          <img
+            src={newsData[currentIndex].image}
+            alt={newsData[currentIndex].title}
+            className="news-image"
+          />
+          <div className="news-caption">
+            <h2>{newsData[currentIndex].title}</h2>
+            <p>{newsData[currentIndex].description}</p>
+          </div>
+        </div>
+      </a>
     </div>
-  </div>
-)
-
-const Laurels = () => (
-  <div className = "app__bg app__wrapper section__padding" id="news">
-
-    <div className = "app__wrapper_info">
-      <SubHeading title = "Awards & recognition"/>
-      <h1 className="headtext__cormorant"> Our Laurels</h1>
-      <div className = "app__laurels_awards">
-        {data.awards.map((award) => <AwardCard award={award} key={award.title} />)}
-      </div>
-    </div>
-    <div className = "app__wrapper_img">
-    <img src={images.laurels} alt = "laurels"/>
-    </div>
-  </div>
-);
+  );
+};
 
 export default Laurels;
