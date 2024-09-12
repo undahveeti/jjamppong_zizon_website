@@ -1,23 +1,27 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next'; // Import useTranslation for translations
 import './Laurels.css'; // Import custom styles for the page
 
 import saleImage from '../../assets/sale.png';
 import twitterImage from '../../assets/twitter.png';
 
 const Laurels = () => {
+  const { t } = useTranslation(); // Initialize useTranslation hook
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Translate both title and description
   const newsData = [
     {
       image: twitterImage, // Replace with your image URL
-      title: 'We\'re turning the heat up!',
-      description: 'Eater LA covers our summer opening!',
-      link: 'https://la.eater.com/2024/6/3/24170495/jjamppong-zizon-korean-noodle-chain-los-angeles-koreatown?utm_source=eater-twitter&utm_medium=social&utm_campaign=eater-dashhudson&utm_content=eater-national-twitter', // Example link
+      title: t('laurels.title1'), // Translate the title
+      description: t('laurels.description1'), // Translate the description
+      link: 'https://la.eater.com/2024/6/3/24170495/jjamppong-zizon-korean-noodle-chain-los-angeles-koreatown?utm_source=eater-twitter&utm_medium=social&utm_campaign=eater-dashhudson&utm_content=eater-national-twitter',
     },
     {
       image: saleImage, // Replace with your image URL
-      title: 'Craving the perfect comfort meal?',
-      description: 'Our delicious Jjangmyeon is on special sale! 7 days a week!',
-      link: 'https://www.instagram.com/p/C_OPb3sPrTX/', // Example link
+      title: t('laurels.title2'), // Translate the title
+      description: t('laurels.description2'), // Translate the description
+      link: 'https://www.instagram.com/p/C_OPb3sPrTX/',
     },
   ];
 
@@ -46,8 +50,8 @@ const Laurels = () => {
             className="news-image"
           />
           <div className="news-caption">
-            <h2>{newsData[currentIndex].title}</h2>
-            <p>{newsData[currentIndex].description}</p>
+            <h2>{newsData[currentIndex].title}</h2> {/* Title translated */}
+            <p>{newsData[currentIndex].description}</p> {/* Description translated */}
           </div>
         </div>
       </a>
