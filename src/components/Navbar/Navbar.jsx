@@ -19,6 +19,7 @@ const Navbar = () => {
               <li className = "p__original"><a href="#about">About</a></li>
               <li className = "p__original"><a href="#menu">Menu</a></li>
               <li className = "p__original"><a href="#news">News</a></li>
+              <li className = "p__original"><a href="#gallery">Gallery</a></li>
               <li className = "p__original"><a href="#contact">Contact</a></li>
             </ul>
             {/*<div className = "app__navbar-login">
@@ -37,6 +38,7 @@ const Navbar = () => {
                     <li className = "p__spicy"><a href="#about">About</a></li>
                     <li className = "p__spicy"><a href="#menu">Menu</a></li>
                     <li className = "p__spicy"><a href="#news">News</a></li>
+                    <li className = "p__spicy"><a href="#gallery">Gallery</a></li>
                     <li className = "p__spicy"><a href="#contact">Contact</a></li>
                   </ul>
                 </div>   

@@ -1,145 +1,71 @@
 .app__gallery {
-    flex-direction: row;
-
-    background: var(--color-fire);
-    padding: 4rem 0 4rem 6rem;
-}
-
-.app__gallery-content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-
-    min-width: 500px;
-    padding-right: 2rem;
-}
-
-.app__gallery-content button {
-    margin-top: 1rem;
-}
-
-.app__gallery-images {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    max-width: 50%;
+    background-color: var(--color-fire); /* Fire-like background color */
     position: relative;
-}
-
-.app__gallery-images_container {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 4rem; /* Increased top padding */
+    padding-bottom: 4rem; /* Increased bottom padding */
+  }
+  
+  .app__gallery-content {
+    text-align: center;
+    margin-bottom: 4rem; /* Increase the space between the text and the gallery */
+    padding-right: 3rem; /* Add padding to the right to create space between the text and images */
+  }
+  
+  .app__gallery-images {
     display: flex;
-    flex-direction: row;
-    width: max-content;
-    overflow-x: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;  
-}
-
-.app__gallery-images_container::-webkit-scrollbar {
-    display: none;
-}
-
-.app__gallery-images_card {
+    align-items: center;
     position: relative;
-    min-width: 301px;
-    height: 447px;
-    margin-right: 2rem;
-}
-
-.gallery__image-icon {
-    position: absolute;
-    color: #fff;
-    font-size: 2rem;
-    opacity: 0;
-    transition: .5s ease;
-    cursor: pointer;
-}
-
-.app__gallery-images_card img {
+    justify-content: flex-start; /* Align the images to the left */
+  }
+  
+  .app__gallery-images_container {
+    display: flex;
+    overflow: hidden; /* Hide the overflowing images */
+    width: 900px; /* Adjust to fit 3 images at a time */
+    scroll-behavior: smooth;
+  }
+  
+  .app__gallery-images_card {
+    min-width: 300px; /* Set the width of each image */
+    height: 300px; /* Fixed height */
+    margin-right: 15px; /* Add some space between the images */
+    position: relative;
+  }
+  
+  .gallery__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 1;
-    transition: .5s ease;
-}
-
-.app__gallery-images_card:hover img {
-    opacity: .35;
-}
-
-.app__gallery-images_card:hover .gallery__image-icon {
-    opacity: 1;
-}
-
-.app__gallery-images_arrows {
-    width: 100%;
+  }
+  
+  .gallery__image-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0.8;
+  }
+  
+  .app__gallery-images_arrows {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-
-    padding: 0 1rem;
+    width: 100%;
     position: absolute;
-    bottom: 5%;
-}
-
-.gallery__arrow-icon {
-    color: var(--color-golden);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .gallery__arrow-icon {
     font-size: 2rem;
+    color: #000;
     cursor: pointer;
-    background: var(--color-black);
-    border-radius: 5px;
-}
-
-.gallery__arrow-icon:hover {
-    color: var(--color-white);
-}
-
-@media screen and (min-width: 2000px) {
-    .app__gallery-content button {
-        margin-top: 2rem;
-    }
-
-    .app__gallery-content {
-        min-width: 1000px;
-        padding-right: 4rem;
-    }
-
-    .app__gallery-images_card {
-        min-width: 400px;
-        height: 547px;
-    }
-}
-
-@media screen and (max-width: 1150px) {
-    .app__gallery {
-        flex-direction: column;
-    }
-
-    .app__gallery-images {
-        max-width: 100%;
-        margin: 5rem 0;
-    }
-}
-
-@media screen and (max-width: 850px) {
-    .app__gallery {
-        padding: 4rem 0 4rem 4rem;
-    }
-}
-
-@media screen and (max-width: 650px) {
-    .app__gallery {
-        padding: 4rem 0 4rem 2rem;
-    }  
-    
-    .app__gallery-content {
-        min-width: 100%;
-    }
-
-    .app__gallery-images_card {
-        min-width: 240px;
-        height: 320px;
-    }
-}
+    transition: color 0.3s ease;
+  }
+  
+  .gallery__arrow-icon:hover {
+    color: #555;
+  }
+  

@@ -25,9 +25,10 @@ import chilis from '../assets/chilis.PNG'
 import about from '../assets/about.PNG';
 import sale from '../assets/sale.png';
 import twitter from '../assets/twitter.png';
-
+import aboutmore from '../assets/about2.png'
 
 export default {
+  aboutmore,
   twitter,
   sale,
   about,

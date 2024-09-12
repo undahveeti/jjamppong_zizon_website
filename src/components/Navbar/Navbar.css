@@ -33,6 +33,7 @@
 }
 
 .app__navbar-links li{
+    font-size: 20px;
     margin: 0 4rem;
     cursor: pointer;
 }

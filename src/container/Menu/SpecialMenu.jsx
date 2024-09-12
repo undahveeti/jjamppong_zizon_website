@@ -3,10 +3,13 @@ import './SpecialMenu.css';
 import { images } from '../../constants';
 
 const SpecialMenu = () => (
-  <div className="app__specialMenu app__bg flex__center section__padding" id="menu">
+  <div className="app__specialMenu app__bg section__padding" id="menu">
+    {/* Title */}
     <div className="app__specialMenu-title">
       <h1 className="headtext__cormorant">Drinks & Beverages</h1>
     </div>
+
+    {/* Menu content */}
     <div className="app__specialMenu-content">
       {/* Left side with drink options */}
       <div className="app__specialMenu-menu_options">
@@ -19,11 +22,11 @@ const SpecialMenu = () => (
           </div>
         </div>
       </div>
+    </div>
 
-      {/* Right side with an image */}
-      <div className="app__specialMenu-menu_img">
-        <img src={images.menu} alt="menu_img" />
-      </div>
+    {/* Full-screen image that is overlaid */}
+    <div className="app__specialMenu-bg_img">
+      <img src={images.menu} alt="menu_img" />
     </div>
   </div>
 );

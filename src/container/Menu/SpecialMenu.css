@@ -1,84 +1,56 @@
 .app__specialMenu {
-    background: var(--color-background);
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
+    position: relative;
+    z-index: 1;
   }
   
   .app__specialMenu-title {
     text-align: center;
     margin-bottom: 2rem;
-    color: var(--color-gold);
-    font-family: 'Cormorant', serif;
-    font-size: 48px;
-    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
   }
   
   .app__specialMenu-content {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
   }
   
   .app__specialMenu-menu_options {
     flex: 1;
-    padding-right: 40px; /* Increase padding for better separation */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    max-width: 500px;
+    text-align: left;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent to let the background image show more */
+    border-radius: 10px;
+    z-index: 2;
   }
   
   .app__specialMenu-menu_items p {
-    font-family: 'Georgia', serif;
-    font-size: 22px;
-    font-weight: 500;
-    color: var(--color-fire);
-    line-height: 2;
-    margin-bottom: 1rem;
-    text-align: left; /* Align items to the left */
-  }
-  
-  .app__specialMenu-menu_items span {
-    float: right; /* Align prices to the right */
-    font-weight: bold;
-    color: var(--color-gold);
-  }
-  
-  .app__specialMenu-menu_img {
-    flex: 1;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: #333;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
   
-  .app__specialMenu-menu_img img {
+  .app__specialMenu-bg_img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    height: 100%;
+    z-index: 0;
+    opacity: 0.85; /* Increasing the opacity to make the image more visible */
   }
   
-  /* Responsive for smaller screens */
-  @media screen and (max-width: 768px) {
-    .app__specialMenu-content {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .app__specialMenu-menu_options {
-      padding-right: 0;
-      margin-bottom: 2rem;
-      align-items: center; /* Center on small screens */
-    }
-  
-    .app__specialMenu-menu_items p {
-      text-align: center;
-    }
-  
-    .app__specialMenu-menu_img img {
-      max-width: 80%; /* Reduce image size for smaller screens */
-    }
+  .app__specialMenu-bg_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85; /* Ensuring the image is vibrant and visible */
+    z-index: 0;
+    filter: brightness(1.1); /* Optional: Use a slight brightness filter to make it pop even more */
   }
   
