@@ -1,29 +1,47 @@
 .menu__container {
-    background-image: url('../../assets/header.png');
+    background-image: url('../../assets/header.png'); /* Assuming you have a header image */
     width: 100%;
-    overflow-x: hidden; /* Prevent content from overflowing */
+    overflow-x: hidden;
     padding: 20px;
   }
   
   .menu__scroll-wrapper {
     display: flex;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    scroll-behavior: smooth; /* Smooth scrolling */
+    overflow-x: auto;
+    scroll-behavior: smooth;
     padding: 10px;
     gap: 20px; /* Space between items */
   }
   
+  /* Style for each menu item container (card-like design) */
   .menu__item {
-    flex: 0 0 25%; /* 4 items at a time, each taking 25% of the width */
+    flex: 0 0 25%;
     max-width: 25%;
-    min-width: 250px; /* Min width for responsiveness */
+    min-width: 250px;
     text-align: center;
+    background-color: #f9f9f9; /* White background for contrast */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for card effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    padding: 15px; /* Internal padding for content */
+    cursor: pointer; /* Pointer cursor to indicate clickability */
+  }
+  
+  .menu__item:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  }
+  
+  .menu__item:active {
+    transform: scale(0.98); /* Slight scale down on click */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Reduce shadow on click */
   }
   
   .menu__item-img {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    margin-bottom: 15px; /* Space between image and text */
   }
   
   .menu__item-info {
@@ -33,6 +51,7 @@
   .menu__item-name {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #333; /* Darker color for better contrast */
   }
   
   .menu__item-description {
@@ -44,13 +63,12 @@
   .menu__item-price {
     font-size: 1.2rem;
     margin-top: 5px;
-    color: #e74c3c;
+    color: #e74c3c; /* Red color for price to make it stand out */
   }
   
-  /* Add responsiveness for mobile */
   @media (max-width: 768px) {
     .menu__item {
-      flex: 0 0 80%; /* Show fewer items on smaller screens */
+      flex: 0 0 80%;
       max-width: 80%;
     }
   }

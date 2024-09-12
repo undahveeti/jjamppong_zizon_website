@@ -79,9 +79,9 @@ const FoodMenu = () => {
           <div key={dish.id} className="menu__item">
             <img src={dish.imgSrc} alt={dish.name} className="menu__item-img" />
             <div className="menu__item-info">
-              <h2 className="menu__item-name" style = {{color: 'white'}}>{dish.name}</h2>
-              <p className="menu__item-description" style = {{color: 'white'}}>{dish.description}</p>
-              <p className="menu__item-price" style = {{color: 'white'}}>{dish.price}</p>
+              <h2 className="menu__item-name">{dish.name}</h2>
+              <p className="menu__item-description">{dish.description}</p>
+              <p className="menu__item-price">{dish.price}</p>
             </div>
           </div>
         ))}
@@ -89,5 +89,4 @@ const FoodMenu = () => {
     </div>
   );
 };
-
 export default FoodMenu;
