@@ -1,82 +1,88 @@
-import React, { useRef, useState } from 'react';
-import './FoodMenu.css';
-import { images } from '../../constants';
+import React from 'react';
+import { useTranslation } from 'react-i18next'; // Import useTranslation for translations
+import './FoodMenu.css'; // Ensure your original CSS is linked
+import { images } from '../../constants'; // Assuming images are in a constants file
 
 const FoodMenu = () => {
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-  const scrollContainer = useRef(null);
+  const { t } = useTranslation(); // Initialize useTranslation hook
 
   const dishes = [
     {
       id: 1,
-      name: 'Spicy Seafood Noodle Soup',
-      description: 'Spicy noodle soup with seafood like shrimp, mussels, and clams.',
+      name: t('menu.dish1.name'),
+      description: t('menu.dish1.description'),
       price: '$19.00',
-      imgSrc: images.soup1,
+      imgSrc: images.soup,
     },
     {
       id: 2,
-      name: 'Extremely Spicy Seafood Noodle Soup',
-      description: 'For spice lovers, this packs an extra punch!',
-      price: '$20.00',
+      name: t('menu.dish2.name'),
+      description: t('menu.dish2.description'),
+      price: '$19.00',
       imgSrc: images.soup2,
     },
     {
       id: 3,
-      name: 'Seafood Rice Soup',
-      description: 'Mild rice soup with an assortment of fresh seafood.',
-      price: '$18.00',
+      name: t('menu.dish3.name'),
+      description: t('menu.dish3.description'),
+      price: '$19.00',
       imgSrc: images.soup3,
     },
-    // Add more items...
+    {
+      id: 4,
+      name: t('menu.dish4.name'),
+      description: t('menu.dish4.description'),
+      price: '$19.00',
+      imgSrc: images.soup4,
+    },
+    {
+      id: 5,
+      name: t('menu.dish5.name'),
+      description: t('menu.dish5.description'),
+      price: '$19.00',
+      imgSrc: images.soup5,
+    },
+    {
+      id: 6,
+      name: t('menu.dish6.name'),
+      description: t('menu.dish6.description'),
+      price: '$13.00',
+      imgSrc: images.noodle,
+    },
+    {
+      id: 7,
+      name: t('menu.dish7.name'),
+      description: t('menu.dish7.description'),
+      price: '$20.00',
+      imgSrc: images.combo,
+    },
+    {
+      id: 8,
+      name: t('menu.dish8.name'),
+      description: t('menu.dish8.description'),
+      price: '$16.00',
+      imgSrc: images.crab,
+    },
+    {
+      id: 9,
+      name: t('menu.dish9.name'),
+      description: t('menu.dish9.description'),
+      price: '$16.00',
+      imgSrc: images.shrimp,
+    },
   ];
 
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.pageX - scrollContainer.current.offsetLeft);
-    setScrollLeft(scrollContainer.current.scrollLeft);
-  };
-
-  const handleMouseLeave = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - scrollContainer.current.offsetLeft;
-    const walk = (x - startX) * 2; // Adjust this value to change scroll speed
-    scrollContainer.current.scrollLeft = scrollLeft - walk;
-  };
-
   return (
-    <div className="app__FoodMenu flex__center section__padding" id="menu">
-      <div className="app__FoodMenu-title">
-        <h1 className="headtext__cormorant">Noodles, Soups, and Dishes</h1>
-      </div>
-      <div className="scroll-instructions">
-        <p className ="p__spicy">Drag to scroll through dishes</p>
-      </div>
-      <div
-        className="app__FoodMenu-menu_soups"
-        ref={scrollContainer}
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseLeave}
-        onMouseMove={handleMouseMove}
-      >
+    <div className="menu__container">
+      <div className="menu__scroll-wrapper"> {/* Scrollable wrapper */}
         {dishes.map((dish) => (
-          <div key={dish.id} className="app__FoodMenu-menu_item">
-            <img src={dish.imgSrc} alt={dish.name} className="menu-item-image" />
-            <h2>{dish.name}</h2>
-            <p>{dish.description}</p>
-            <p className="price">{dish.price}</p>
+          <div key={dish.id} className="menu__item">
+            <img src={dish.imgSrc} alt={dish.name} className="menu__item-img" />
+            <div className="menu__item-info">
+              <h2 className="menu__item-name" style = {{color: 'white'}}>{dish.name}</h2>
+              <p className="menu__item-description" style = {{color: 'white'}}>{dish.description}</p>
+              <p className="menu__item-price" style = {{color: 'white'}}>{dish.price}</p>
+            </div>
           </div>
         ))}
       </div>

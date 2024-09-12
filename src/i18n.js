@@ -38,6 +38,44 @@ const resources = {
         drink3: "Cola 500ml",
         drink4: "Cider 500ml",
       },
+      menu: {
+        dish1: {
+          name: "Spicy Seafood Noodle Soup",
+          description: "A rich, spicy broth with fresh noodles and a flavorful mix of shrimp, mussels, and clams.",
+        },
+        dish2: {
+          name: "Spicy Seafood Rice Noodle Soup",
+          description: "For spice lovers! A hearty soup with soft rice noodles and a variety of fresh seafood.",
+        },
+        dish3: {
+          name: "Spicy Seafood Sujebi (Hand-pulled dough) Soup",
+          description: "Hand-pulled dough in a spicy seafood broth with shrimp, mussels, and clams.",
+        },
+        dish4: {
+          name: "Spicy Seafood and Soft Bean Curd Soup with Rice",
+          description: "A comforting spicy soup with soft bean curd, seafood, and rice on the side.",
+        },
+        dish5: {
+          name: "Spicy Seafood Noodle Soup with Soft Bean Curd",
+          description: "A spicy noodle soup with a mix of seafood and soft, silky bean curd.",
+        },
+        dish6: {
+          name: "Noodles in Black-Bean Sauce",
+          description: "Chewy noodles topped with a rich and savory black bean sauce.",
+        },
+        dish7: {
+          name: "Noodles in Black-Bean Sauce and Spicy Seafood Noodle Soup (Half & Half)",
+          description: "A perfect combo of savory black bean sauce noodles and spicy seafood noodle soup.",
+        },
+        dish8: {
+          name: "Crab Meat Fried Rice",
+          description: "Stir-fried rice with fresh crab meat, vegetables, and a touch of savory seasoning.",
+        },
+        dish9: {
+          name: "Shrimp Fried Rice",
+          description: "Delicious fried rice with juicy shrimp and vegetables, seasoned to perfection.",
+        },
+      },
       gallery: {
         title: "Photo Gallery",
         description: "Discover the unique and flavorful experience that sets us apart",
@@ -103,6 +141,44 @@ const resources = {
         drink4: "사이다 500ml",
       },
       
+      menu: {
+        dish1: {
+          name: "매운 해물 국수",
+          description: "신선한 새우, 홍합, 조개와 함께한 매콤한 국물 국수.",
+        },
+        dish2: {
+          name: "매운 해물 쌀국수",
+          description: "매운맛을 좋아하는 분들을 위한 부드러운 쌀국수와 다양한 해산물로 구성된 국물.",
+        },
+        dish3: {
+          name: "매운 해물 수제비",
+          description: "수제비와 새우, 홍합, 조개를 넣은 매콤한 해물 국물.",
+        },
+        dish4: {
+          name: "매운 해물 순두부 찌개",
+          description: "해물과 부드러운 순두부, 밥이 곁들여진 매운 국물.",
+        },
+        dish5: {
+          name: "해물 순두부 국수",
+          description: "해물과 부드러운 순두부를 곁들인 매운 국물 국수.",
+        },
+        dish6: {
+          name: "짜장면",
+          description: "쫄깃한 면 위에 진하고 감칠맛 나는 짜장 소스.",
+        },
+        dish7: {
+          name: "짜장면 & 매운 해물 국수 (반반)",
+          description: "감칠맛 나는 짜장면과 매운 해물 국수를 완벽하게 조합한 반반 메뉴.",
+        },
+        dish8: {
+          name: "게살 볶음밥",
+          description: "신선한 게살과 야채로 만든 고소한 볶음밥.",
+        },
+        dish9: {
+          name: "새우 볶음밥",
+          description: "통통한 새우와 야채를 넣어 맛있게 볶아낸 볶음밥.",
+        },
+      },
       gallery: {
         title: "사진 갤러리",
         description: "우리만의 독특하고 맛있는 경험을 발견해보세요",

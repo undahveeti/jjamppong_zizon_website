@@ -25,9 +25,27 @@ import chilis from '../assets/chilis.PNG'
 import about from '../assets/about.PNG';
 import sale from '../assets/sale.png';
 import twitter from '../assets/twitter.png';
-import aboutmore from '../assets/about2.png'
+import aboutmore from '../assets/about2.png';
+import soup from '../assets/soup.png';
+import soup2 from '../assets/soup2.png';
+import soup3 from '../assets/soup3.png';
+import soup4 from '../assets/soup4.png';
+import soup5 from '../assets/soup5.png';
+import noodle from '../assets/noodle.png';
+import combo from '../assets/combo.png';
+import crab from '../assets/crab.png';
+import shrimp from '../assets/shrimp.png';
 
 export default {
+  soup,
+  soup2,
+  soup3,
+  soup4,
+  soup5,
+  noodle,
+  combo,
+  shrimp,
+  crab,
   aboutmore,
   twitter,
   sale,

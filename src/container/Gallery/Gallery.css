@@ -1,5 +1,5 @@
 .app__gallery {
-    background-color: var(--color-fire); /* Fire-like background color */
+    background-image: url('../../assets/header.png');
     position: relative;
     width: 100%;
     overflow: hidden;

@@ -1,98 +1,57 @@
-.app__FoodMenu {
-    background-color: var(--color-fire);
-    flex-direction: column;
-    padding: 40px;
-}
-
-.app__FoodMenu-title {
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.app__FoodMenu-menu_soups {
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-bottom: 20px;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    gap: 20px;
-    cursor: grab; /* Indicate that it is draggable */
-}
-
-.app__FoodMenu-menu_soups:active {
-    cursor: grabbing; /* Change cursor while dragging */
-}
-
-.app__FoodMenu-menu_item {
-    display: inline-block;
-    background-color: #fff;
-    border-radius: 10px;
+.menu__container {
+    background-image: url('../../assets/header.png');
+    width: 100%;
+    overflow-x: hidden; /* Prevent content from overflowing */
     padding: 20px;
+  }
+  
+  .menu__scroll-wrapper {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    padding: 10px;
+    gap: 20px; /* Space between items */
+  }
+  
+  .menu__item {
+    flex: 0 0 25%; /* 4 items at a time, each taking 25% of the width */
+    max-width: 25%;
+    min-width: 250px; /* Min width for responsiveness */
     text-align: center;
-    width: 250px;
-    text-decoration: none;
-    color: var(--color-black);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #ddd;
-}
-
-.app__FoodMenu-menu_item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.menu-item-image {
+  }
+  
+  .menu__item-img {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.app__FoodMenu-menu_item:hover .menu-item-image {
-    transform: scale(1.1);
-}
-
-h2 {
-    font-family: var(--font-base);
-    color: var(--color-black);
+  }
+  
+  .menu__item-info {
     margin-top: 10px;
-}
-
-.price {
+  }
+  
+  .menu__item-name {
+    font-size: 1.5rem;
     font-weight: bold;
-    color: var(--color-red);
+  }
+  
+  .menu__item-description {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+  }
+  
+  .menu__item-price {
+    font-size: 1.2rem;
     margin-top: 5px;
-}
-
-.scroll-instructions {
-    text-align: center;
-    margin-bottom: 10px;
-    color: #fff;
-    font-size: 14px;
-}
-
-/* Hide the scrollbar */
-.app__FoodMenu-menu_soups::-webkit-scrollbar {
-    display: none;
-}
-
-/* Responsive for larger screens */
-@media screen and (min-width: 1200px) {
-    .app__FoodMenu-menu_soups {
-        gap: 40px;
+    color: #e74c3c;
+  }
+  
+  /* Add responsiveness for mobile */
+  @media (max-width: 768px) {
+    .menu__item {
+      flex: 0 0 80%; /* Show fewer items on smaller screens */
+      max-width: 80%;
     }
-}
-
-/* Responsive for smaller screens */
-@media screen and (max-width: 768px) {
-    .app__FoodMenu-menu_soups {
-        flex-direction: column;
-    }
-
-    .app__FoodMenu-menu_item {
-        width: 100%;
-    }
-}
+  }
+  
