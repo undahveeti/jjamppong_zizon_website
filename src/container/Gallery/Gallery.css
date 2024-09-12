@@ -69,3 +69,31 @@
     color: #555;
   }
   
+  /* Mobile adjustments for iPhones and other smaller screens */
+  @media screen and (max-width: 768px) {
+    .app__gallery-images_container {
+      width: 100%; /* Make the container full-width on mobile */
+      padding: 0 1rem; /* Add padding for mobile */
+    }
+  
+    .app__gallery-images_card {
+      min-width: 90%; /* Show only 1 image per view on mobile, keeping it responsive */
+      height: auto; /* Remove fixed height to allow images to scale */
+      margin-right: 10px; /* Adjust margin for mobile */
+    }
+  
+    .gallery__image {
+      height: auto; /* Let the image resize automatically for mobile */
+      max-height: 250px; /* Set a maximum height for images */
+    }
+  
+    .app__gallery-images_arrows {
+      top: 90%; /* Move arrows to the bottom on mobile */
+      width: 100%;
+    }
+  
+    .gallery__arrow-icon {
+      font-size: 1.5rem; /* Smaller arrows on mobile */
+    }
+  }
+  
