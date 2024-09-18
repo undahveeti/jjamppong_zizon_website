@@ -98,7 +98,7 @@
 .p__spicy {
   font-family: var(--font-spicy);
   color: var(--color-fire);
-  font-weight: 500;
+  font-weight: bolder;
   font-variant: small-caps;
   letter-spacing: 0.04em;
   text-transform: capitalize;
@@ -110,7 +110,7 @@
 .p__original{
   font-family: var(--font-spicy);
   color: var(--color-white);
-  font-weight: 500;
+  font-weight: bolder;
   font-variant: small-caps;
   letter-spacing: 0.04em;
   text-transform: capitalize;

@@ -35,8 +35,12 @@ import noodle from '../assets/noodle.png';
 import combo from '../assets/combo.png';
 import crab from '../assets/crab.png';
 import shrimp from '../assets/shrimp.png';
+import visual1 from '../assets/mainvisual.png';
+import visual2 from '../assets/mainvisual2.png';
 
 export default {
+  visual1,
+  visual2,
   soup,
   soup2,
   soup3,

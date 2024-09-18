@@ -1,35 +1,11 @@
-.app__header {
-    background-image: var(--color-golden);
-    background-size: 10px;
-    padding: 1rem;
-}
-
-.app__header-h1 {
-    font-family: var(--font-base);
-    color: var(--color-fire);
-
-    letter-spacing: 0.04em;
-    text-transform: full-size-kana;
-
-    line-height: 1.2;
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
-
-.app__wrapper_img img{
-    width: 80%;
-
-    border: 5px solid var(--color-golden);
-    padding:10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0, 0.2);
-    transition: transform 0.3s ease-in-out; 
-}
-
-@media (max-width: 768px) {
-    .app__header-h1 {
-        font-size: 50px;  /* Decrease font size */
-        line-height: 70px; /* Decrease line height */
-    }
-}
-
+.app__video-overlay_circle {
+    width: 100px; /* You can adjust the size of the container */
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Keeps the circle shape */
+    background-color: rgba(0, 0, 0, 0.4); /* Optional: Add a background for contrast */
+    cursor: pointer;
+  }
+  

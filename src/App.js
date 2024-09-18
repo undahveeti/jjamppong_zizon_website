@@ -15,12 +15,12 @@ const MainContent = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Header />} />
-        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/history" element={<AboutUs />} />
         <Route path="/food-menu" element={<FoodMenu />} />
         <Route path="/special-menu" element={<SpecialMenu />} />
         <Route path="/chef" element={<Chef />} />
         <Route path="/intro" element={<Intro />} />
-        <Route path="/laurels" element={<Laurels />} />
+        <Route path="/news" element={<Laurels />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/find-us" element={<FindUs />} />
       </Routes>

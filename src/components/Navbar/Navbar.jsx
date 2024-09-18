@@ -22,7 +22,9 @@ const Navbar = () => {
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
-        <img src={images.zizon} alt="app logo" />
+        <Link to="/">
+          <img src={images.zizon} alt="app logo"/>
+        </Link>
       </div>
 
       <ul className="app__navbar-links p__original">
@@ -31,18 +33,17 @@ const Navbar = () => {
             onMouseEnter={() => setDropdown(true)}
             onMouseLeave={() => setDropdown(false)}
         >
-          About
+          {t('navbar.about')}
           {dropdown && (
             <ul className="app__navbar-dropdown">
-              <li className="p__original"><Link to="/">{t('navbar.home')}</Link></li>
-              <li className="p__original"><Link to="/history">{t('navbar.about')}</Link></li>
+              <li className="p__original"><Link to="/history">{t('navbar.history')}</Link></li>
               <li className="p__original"><Link to="/food-menu">{t('navbar.menu')}</Link></li>
               <li className="p__original"><Link to="/news">{t('navbar.news')}</Link></li>
               <li className="p__original"><Link to="/gallery">{t('navbar.gallery')}</Link></li>
             </ul>
           )}
         </li>
-        <li className="p__original"><a href="#locations">Locations</a></li>
+        <li className="p__original"><a href="#locations">{t('navbar.locations')}</a></li>
         <li className="p__original"><a href="#contact">{t('navbar.contact')}</a></li>
         {/* Order Now Button */}
         <li className="p__original"><a href="#order" className="order-button">Order Now</a></li>

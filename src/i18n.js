@@ -8,12 +8,13 @@ const resources = {
   en: {
     translation: {
       navbar: {
-        home: "Home",
         about: "About Us",
         menu: "Menu",
         news: "News",
         gallery: "Gallery",
         contact: "Contact",
+        history: "History",
+        locations: "Locations",
       },
       header: {
         subheading: "Chase the new flavour",
@@ -110,12 +111,13 @@ const resources = {
   ko: {
     translation: {
       navbar: {
-        home: "홈",
         about: "소개",
         menu: "메뉴",
         news: "뉴스",
         gallery: "갤러리",
         contact: "오시는 길",
+        history: "역사",
+        locations: "매장 위치",
       },
       header: {
         subheading: "새로운 맛을 추구하세요",
