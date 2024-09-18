@@ -7,6 +7,8 @@ import { useTranslation } from 'react-i18next';
 import images from '../../constants/images';
 import './Navbar.css';
 
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
   const { t, i18n } = useTranslation(); // useTranslation hook to switch languages
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -32,11 +34,11 @@ const Navbar = () => {
           About
           {dropdown && (
             <ul className="app__navbar-dropdown">
-              <li className="p__original"><a href="#home">{t('navbar.home')}</a></li>
-              <li className="p__original"><a href="#about">{t('navbar.about')}</a></li>
-              <li className="p__original"><a href="#menu">{t('navbar.menu')}</a></li>
-              <li className="p__original"><a href="#news">{t('navbar.news')}</a></li>
-              <li className="p__original"><a href="#gallery">{t('navbar.gallery')}</a></li>
+              <li className="p__original"><Link to="/">{t('navbar.home')}</Link></li>
+              <li className="p__original"><Link to="/history">{t('navbar.about')}</Link></li>
+              <li className="p__original"><Link to="/food-menu">{t('navbar.menu')}</Link></li>
+              <li className="p__original"><Link to="/news">{t('navbar.news')}</Link></li>
+              <li className="p__original"><Link to="/gallery">{t('navbar.gallery')}</Link></li>
             </ul>
           )}
         </li>
@@ -64,11 +66,11 @@ const Navbar = () => {
                 About
                 {smallDropdown && (
                   <ul className="app__navbar-smallscreen-dropdown">
-                    <li className="p__spicy"><a href="#home">{t('navbar.home')}</a></li>
-                    <li className="p__spicy"><a href="#about">{t('navbar.about')}</a></li>
-                    <li className="p__spicy"><a href="#menu">{t('navbar.menu')}</a></li>
-                    <li className="p__spicy"><a href="#news">{t('navbar.news')}</a></li>
-                    <li className="p__spicy"><a href="#gallery">{t('navbar.gallery')}</a></li>
+                    <li className="p__spicy"><Link to="/">{t('navbar.home')}</Link></li>
+                    <li className="p__spicy"><Link to="/history">{t('navbar.about')}</Link></li>
+                    <li className="p__spicy"><Link to="/food-menu">{t('navbar.menu')}</Link></li>
+                    <li className="p__spicy"><Link to="/news">{t('navbar.news')}</Link></li>
+                    <li className="p__spicy"><Link to="/gallery">{t('navbar.gallery')}</Link></li>
                   </ul>
                 )}
               </li>

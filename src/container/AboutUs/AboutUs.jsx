@@ -10,7 +10,7 @@ const AboutUs = () => {
   const { t } = useTranslation(); // Initialize useTranslation hook
 
   return (
-    <div className="app__about app__bg app__wrapper section__padding" id="about">
+    <div className="app__about app__bg app__wrapper section__padding" id="history">
       <div className="app__wrapper_img">
         <img src={images.chilis} alt="chilis img" />
       </div>
