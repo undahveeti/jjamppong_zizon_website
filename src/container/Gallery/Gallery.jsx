@@ -7,7 +7,6 @@ import './Gallery.css';
 const galleryImages = [images.gallery01, images.gallery02, images.gallery03, images.gallery04, images.welcome];
 
 const Gallery = () => {
-  const { t } = useTranslation(); // Initialize useTranslation hook
   const scrollRef = React.useRef(null);
 
   const scroll = (direction) => {
@@ -22,16 +21,6 @@ const Gallery = () => {
 
   return (
     <div className="app__gallery flex__center" id="gallery">
-      <div className="app__gallery-content">
-        <h1 className="headtext__cormorant">{t('gallery.title')}</h1> {/* Translated "Photo Gallery" */}
-        <p className="p__opensans" style={{ color: '#AAAAAA', marginTop: '2rem 1rem 1rem 1rem' }}>
-          {t('gallery.description')} {/* Translated description */}
-        </p>
-        <a href="https://www.yelp.com/biz_photos/jjamppong-zizon-los-angeles-6" target="_blank" rel="noopener noreferrer">
-          <button type="button" className="custom__button">{t('gallery.button')}</button> {/* Translated "View More" */}
-        </a>
-      </div>
-
       <div className="app__gallery-images">
         <div className="app__gallery-images_container" ref={scrollRef}>
           {galleryImages.map((image, index) => (

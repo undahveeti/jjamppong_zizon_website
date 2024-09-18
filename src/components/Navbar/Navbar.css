@@ -187,6 +187,26 @@
   color: var(--color-crimson); /* Crimson on hover */
 }
 
+.app__navbar-smallscreen-dropdown {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.app__navbar-smallscreen-dropdown li {
+  margin-bottom: 0.5rem;
+}
+
+.app__navbar-smallscreen-dropdown li a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.app__navbar-smallscreen-dropdown li a:hover {
+  color: var(--color-crimson); /* Crimson on hover */
+}
+
+
 /* Order Now Button */
 .order-button {
   background-color: var(--color-fire);

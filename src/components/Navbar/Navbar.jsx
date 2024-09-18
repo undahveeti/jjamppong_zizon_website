@@ -14,6 +14,10 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [dropdown, setDropdown] = useState(false); // dropdown for desktop "About"
   const [smallDropdown, setSmallDropdown] = useState(false); // dropdown for mobile "About"
+  const [locationDropdown, setLocationDropdown] = useState(false); // dropdown for desktop "Locations"
+  const [smallLocationDropdown, setSmallLocationDropdown] = useState(false); // dropdown for mobile "Locations"
+  const [franchiseDropdown, setFranchiseDropdown] = useState(false); // dropdown for desktop "Franchise"
+  const [smallFranchiseDropdown, setSmallFranchiseDropdown] = useState(false); // dropdown for mobile "Franchise"
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng); // Function to switch languages
@@ -43,8 +47,35 @@ const Navbar = () => {
             </ul>
           )}
         </li>
-        <li className="p__original"><a href="#locations">{t('navbar.locations')}</a></li>
-        <li className="p__original"><a href="#contact">{t('navbar.contact')}</a></li>
+
+        {/* Desktop Locations Dropdown */}
+        <li className="app__navbar-item"
+            onMouseEnter={() => setLocationDropdown(true)}
+            onMouseLeave={() => setLocationDropdown(false)}
+        >
+          {t('navbar.store')}
+          {locationDropdown && (
+            <ul className="app__navbar-dropdown">
+              <li className="p__original"><Link to="/find-store">{t('navbar.locations')}</Link></li>
+              <li className="p__original"><Link to="/interior-design">{t('navbar.intdesign')}</Link></li>
+            </ul>
+          )}
+        </li>
+
+        {/* Desktop Franchise Dropdown */}
+        <li className="app__navbar-item"
+            onMouseEnter={() => setFranchiseDropdown(true)}
+            onMouseLeave={() => setFranchiseDropdown(false)}
+        >
+          {t('navbar.franchise')}
+          {franchiseDropdown && (
+            <ul className="app__navbar-dropdown">
+              <li className="p__original"><Link to="/contact">{t('navbar.contact')}</Link></li>
+              <li className="p__original"><Link to="/why-us">{t('navbar.whyUs')}</Link></li>
+            </ul>
+          )}
+        </li>
+
         {/* Order Now Button */}
         <li className="p__original"><a href="#order" className="order-button">Order Now</a></li>
       </ul>
@@ -64,11 +95,11 @@ const Navbar = () => {
 
               {/* Small Screen About Dropdown */}
               <li className="p__spicy" onClick={() => setSmallDropdown(!smallDropdown)}>
-                About
+                {t('navbar.about')}
                 {smallDropdown && (
                   <ul className="app__navbar-smallscreen-dropdown">
                     <li className="p__spicy"><Link to="/">{t('navbar.home')}</Link></li>
-                    <li className="p__spicy"><Link to="/history">{t('navbar.about')}</Link></li>
+                    <li className="p__spicy"><Link to="/history">{t('navbar.history')}</Link></li>
                     <li className="p__spicy"><Link to="/food-menu">{t('navbar.menu')}</Link></li>
                     <li className="p__spicy"><Link to="/news">{t('navbar.news')}</Link></li>
                     <li className="p__spicy"><Link to="/gallery">{t('navbar.gallery')}</Link></li>
@@ -76,7 +107,28 @@ const Navbar = () => {
                 )}
               </li>
 
-              <li className="p__spicy"><a href="#locations">Locations</a></li>
+              {/* Small Screen Locations Dropdown */}
+              <li className="p__spicy" onClick={() => setSmallLocationDropdown(!smallLocationDropdown)}>
+                {t('navbar.store')}
+                {smallLocationDropdown && (
+                  <ul className="app__navbar-smallscreen-dropdown">
+                    <li className="p__spicy"><Link to="/find-store">{t('navbar.locations')}</Link></li>
+                    <li className="p__spicy"><Link to="/interior-design">{t('navbar.intdesign')}</Link></li>
+                  </ul>
+                )}
+              </li>
+
+              {/* Small Screen Franchise Dropdown */}
+              <li className="p__spicy" onClick={() => setSmallFranchiseDropdown(!smallFranchiseDropdown)}>
+                {t('navbar.franchise')}
+                {smallFranchiseDropdown && (
+                  <ul className="app__navbar-smallscreen-dropdown">
+                    <li className="p__spicy"><Link to="/contact">{t('navbar.contact')}</Link></li>
+                    <li className="p__spicy"><Link to="/why-us">{t('navbar.whyUs')}</Link></li>
+                  </ul>
+                )}
+              </li>
+
               <li className="p__spicy"><a href="#contact">{t('navbar.contact')}</a></li>
               <li className="p__spicy"><a href="#order" className="order-button">Order Now</a></li>
             </ul>
