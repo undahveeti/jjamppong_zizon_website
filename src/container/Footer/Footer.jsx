@@ -10,7 +10,7 @@ const Footer = () => {
   const { t } = useTranslation(); // Initialize useTranslation hook
 
   return (
-    <div className="app__footer app__bg section__padding" id="login">
+    <div className="app__footer app__bg " id="login">
       <FooterOverlay />
       <Newsletter />
 
