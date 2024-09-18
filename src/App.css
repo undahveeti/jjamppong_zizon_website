@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+.main-content {
+  padding-bottom: 800px; /* Adjust this value based on the height of your footer */
+}
+
 .app__bg {
   background-color: floralwhite;
   /*background: url('./assets/bg.png');*/

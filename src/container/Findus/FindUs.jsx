@@ -8,7 +8,7 @@ const FindUs = () => {
   const { t } = useTranslation(); // Initialize useTranslation hook
 
   return (
-    <div className="app__bg app__wrapper section__padding" id="contact" style={{ display: 'flex', justifyContent: 'center' }}>
+    <div className="app__bg app__wrapper section__padding" id="find-store" style={{ display: 'flex', justifyContent: 'center' }}>
       <div className="app__wrapper_img">
         <img src={images.aboutmore} alt="findus" />
       </div>

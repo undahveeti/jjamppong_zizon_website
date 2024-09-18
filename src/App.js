@@ -7,23 +7,33 @@ import './App.css';
 import './i18n'; // Import the i18n configuration
 
 const MainContent = () => {
-  // Get the current location (route)
   const location = useLocation();
 
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Header />} />
-        <Route path="/history" element={<AboutUs />} />
-        <Route path="/food-menu" element={<FoodMenu />} />
-        <Route path="/special-menu" element={<SpecialMenu />} />
-        <Route path="/chef" element={<Chef />} />
-        <Route path="/intro" element={<Intro />} />
-        <Route path="/news" element={<Laurels />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/find-us" element={<FindUs />} />
-      </Routes>
+      <div className="main-content">
+        <Routes>
+          {/* Render Header and Gallery on the home page */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Header />
+                <Gallery />
+              </>
+            }
+          />
+          <Route path="/history" element={<AboutUs />} />
+          <Route path="/food-menu" element={<FoodMenu />} />
+          <Route path="/special-menu" element={<SpecialMenu />} />
+          <Route path="/chef" element={<Chef />} />
+          <Route path="/intro" element={<Intro />} />
+          <Route path="/news" element={<Laurels />} />
+          <Route path="/find-store" element={<FindUs />} />
+        </Routes>
+      </div>
+
       {/* Conditionally render Footer only on the home page */}
       {location.pathname === '/' && <Footer />}
     </>

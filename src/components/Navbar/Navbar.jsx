@@ -43,7 +43,7 @@ const Navbar = () => {
               <li className="p__original"><Link to="/history">{t('navbar.history')}</Link></li>
               <li className="p__original"><Link to="/food-menu">{t('navbar.menu')}</Link></li>
               <li className="p__original"><Link to="/news">{t('navbar.news')}</Link></li>
-              <li className="p__original"><Link to="/gallery">{t('navbar.gallery')}</Link></li>
+    
             </ul>
           )}
         </li>
@@ -102,7 +102,6 @@ const Navbar = () => {
                     <li className="p__spicy"><Link to="/history">{t('navbar.history')}</Link></li>
                     <li className="p__spicy"><Link to="/food-menu">{t('navbar.menu')}</Link></li>
                     <li className="p__spicy"><Link to="/news">{t('navbar.news')}</Link></li>
-                    <li className="p__spicy"><Link to="/gallery">{t('navbar.gallery')}</Link></li>
                   </ul>
                 )}
               </li>
@@ -129,7 +128,7 @@ const Navbar = () => {
                 )}
               </li>
 
-              <li className="p__spicy"><a href="#contact">{t('navbar.contact')}</a></li>
+            
               <li className="p__spicy"><a href="#order" className="order-button">Order Now</a></li>
             </ul>
 
