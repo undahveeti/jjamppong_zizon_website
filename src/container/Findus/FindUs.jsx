@@ -1,35 +1,113 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next'; // Import useTranslation for translations
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { images } from '../../constants';
 
-import { SubHeading } from '../../components';
-
+import './FindUs.css';
 const FindUs = () => {
-  const { t } = useTranslation(); // Initialize useTranslation hook
+  const { t } = useTranslation();
+
+  const [selectedStore, setSelectedStore] = useState(null); // Track selected store for modal
+
+  // Store data (replace this with your actual data)
+  const stores = [
+    {
+      id: 1,
+      name: 'Jjamppong Zizon Los Angeles',
+      address: '3446 Wilshire Blvd, Los Angeles, CA 90010',
+      phone: '(213) 263-9527',
+      franchisee: 'Mama Sue',
+      businessHours: 'Mon - Sun: 10:30am - 9:00pm',
+      image: images.about,
+    },
+    {
+      id: 2,
+      name: 'Next One',
+      address: 'Somewhere in Denver',
+      phone: '999-999-9999',
+      franchisee: 'John Doe',
+      businessHours: 'Mon - Sun: 10:00am - 9:30pm',
+      image: images.store2,
+    },
+    // Add more stores here
+  ];
+
+  // Open Modal
+  const openModal = (store) => {
+    setSelectedStore(store);
+  };
+
+  // Close Modal
+  const closeModal = () => {
+    setSelectedStore(null);
+  };
 
   return (
-    <div className="app__bg app__wrapper section__padding" id="find-store" style={{ display: 'flex', justifyContent: 'center' }}>
-      <div className="app__wrapper_img">
-        <img src={images.aboutmore} alt="findus" />
-      </div>
-      <div className="app__wrapper_info" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <SubHeading title={t('findus.contact')} /> {/* Translated "Contact" */}
-        <h1 className="headtext__cormorant" style={{ color: '#8B0000', marginBottom: '3rem' }}>{t('findus.title')}</h1> {/* Translated "Find Us" */}
-        <div className="app__wrapper-content" style={{ maxWidth: '600px' }}>
-          <p className="p__opensans" style={{ color: '#8B0000' }}>{t('findus.address')}</p> {/* Translated Address */}
-          <p className="p__cormorant" style={{ color: '#8B0000', margin: '2rem 0' }}>{t('findus.hoursTitle')}</p> {/* Translated "Opening Hours" */}
-          <p className="p__spicy">{t('findus.hours')}</p> {/* Translated Opening Hours */}
+    <div className="app__wrapper section__padding" id="find-store">
+      
+
+      {/* Store Table */}
+      <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <thead>
+          <tr>
+            <th>Store Photo</th>
+            <th>Store Name</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th>Store Information</th>
+          </tr>
+        </thead>
+        <tbody>
+          {stores.map((store) => (
+            <tr key={store.id} style={{ textAlign: 'center' }}>
+              <td><img src={store.image} alt={store.name} /></td>
+              <td>{store.name}</td>
+              <td>{store.address}</td>
+              <td>{store.phone}</td>
+              <td>
+                <button className="custom__button" onClick={() => openModal(store)}>
+                  Store Information
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {/* Store Information Modal */}
+      {selectedStore && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <h2>{selectedStore.name}</h2>
+            <table>
+              <tbody>
+                <tr>
+                  <td><strong>Branch Name:</strong></td>
+                  <td>{selectedStore.name}</td>
+                </tr>
+                <tr>
+                  <td><strong>Franchisee:</strong></td>
+                  <td>{selectedStore.franchisee}</td>
+                </tr>
+                <tr>
+                  <td><strong>Contact:</strong></td>
+                  <td>{selectedStore.phone}</td>
+                </tr>
+                <tr>
+                  <td><strong>Branch Address:</strong></td>
+                  <td>{selectedStore.address}</td>
+                </tr>
+                <tr>
+                  <td><strong>Business Hours:</strong></td>
+                  <td>{selectedStore.businessHours}</td>
+                </tr>
+              </tbody>
+            </table>
+            <button className="custom__button" onClick={closeModal}>Close</button>
+          </div>
         </div>
-        <a href="https://www.yelp.com/map/jjamppong-zizon-los-angeles-6" target="_blank" rel="noopener noreferrer">
-          <button className="custom__button" style={{ marginTop: '2rem' }}>{t('findus.button')}</button> {/* Translated "Visit Us" */}
-        </a>
-      </div>
-      <div className="app__wrapper_img">
-        <img src={images.about} alt="findus" />
-      </div>
+      )}
     </div>
   );
 };
 
 export default FindUs;
-
