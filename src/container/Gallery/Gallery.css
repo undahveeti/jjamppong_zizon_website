@@ -1,99 +1,116 @@
 .app__gallery {
-    background-image: url('../../assets/header.png');
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    padding-top: 4rem; /* Increased top padding */
-    padding-bottom: 4rem; /* Increased bottom padding */
-  }
+  background-image: url('../../assets/mainvisual.png');
+  background-size: cover; /* This ensures the image covers the entire container */
+  background-position: center; /* This centers the background image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  position: absolute;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding-top: 20rem; /* Adjust top padding */
+  padding-bottom: 15rem; /* Adjust bottom padding */
+}
+
+
+.app__gallery-images {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: flex-start; /* Align the images to the left */
+}
+
+.app__gallery-images_container {
+  display: flex;
+  overflow: hidden; /* Hide overflowing images */
+  width: 100%; /* Make it full-width */
+  scroll-behavior: smooth;
+}
+
+.app__gallery-images_card {
+  flex: 1;
+  width: 300px;  
+  height: 300px;
+  margin-right: 15px; 
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
-  .app__gallery-content {
-    text-align: center;
-    margin-bottom: 4rem; /* Increase the space between the text and the gallery */
-    padding-right: 3rem; /* Add padding to the right to create space between the text and images */
-  }
-  
-  .app__gallery-images {
-    display: flex;
-    align-items: center;
-    position: relative;
-    justify-content: flex-start; /* Align the images to the left */
-  }
-  
+  background-color: #fff;
+  padding: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden; 
+}
+
+.app__gallery-images_card:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+.gallery__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.gallery__image-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+.app__gallery-images_arrows {
+  display: flex;
+  justify-content: center; 
+  position: absolute;
+  width: 100%;
+  bottom: -40px; 
+  transform: translateY(-50%);
+}
+
+.gallery__arrow-icon {
+  margin: 0 10px; 
+  font-size: 2rem;
+  color: #000;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.gallery__arrow-icon:hover {
+  color: #555;
+}
+
+
+/* Mobile adjustments for iPhones and other smaller screens */
+@media screen and (max-width: 768px) {
   .app__gallery-images_container {
-    display: flex;
-    overflow: hidden; /* Hide the overflowing images */
-    width: 900px; /* Adjust to fit 3 images at a time */
-    scroll-behavior: smooth;
+    width: 100%; /* Full-width on mobile */
+    padding: 0 1rem; /* Add padding for mobile */
   }
-  
+
   .app__gallery-images_card {
-    min-width: 300px; /* Set the width of each image */
-    height: 300px; /* Fixed height */
-    margin-right: 15px; /* Add some space between the images */
-    position: relative;
+    min-width: 90%; /* Show only 1 image per view on mobile */
+    height: auto; /* Let images scale naturally */
+    margin-right: 10px; /* Adjust margin for mobile */
   }
-  
+
   .gallery__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto; /* Let the image resize automatically for mobile */
+    max-height: 250px; /* Set a maximum height for images */
   }
-  
-  .gallery__image-icon {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    color: white;
-    font-size: 1.5rem;
-    opacity: 0.8;
-  }
-  
+
   .app__gallery-images_arrows {
-    display: flex;
-    justify-content: space-between;
+    top: 90%; /* Move arrows to the bottom on mobile */
     width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
   }
-  
+
   .gallery__arrow-icon {
-    font-size: 2rem;
-    color: #000;
-    cursor: pointer;
-    transition: color 0.3s ease;
+    font-size: 1.5rem; /* Smaller arrows on mobile */
   }
-  
-  .gallery__arrow-icon:hover {
-    color: #555;
-  }
-  
-  /* Mobile adjustments for iPhones and other smaller screens */
-  @media screen and (max-width: 768px) {
-    .app__gallery-images_container {
-      width: 100%; /* Make the container full-width on mobile */
-      padding: 0 1rem; /* Add padding for mobile */
-    }
-  
-    .app__gallery-images_card {
-      min-width: 90%; /* Show only 1 image per view on mobile, keeping it responsive */
-      height: auto; /* Remove fixed height to allow images to scale */
-      margin-right: 10px; /* Adjust margin for mobile */
-    }
-  
-    .gallery__image {
-      height: auto; /* Let the image resize automatically for mobile */
-      max-height: 250px; /* Set a maximum height for images */
-    }
-  
-    .app__gallery-images_arrows {
-      top: 90%; /* Move arrows to the bottom on mobile */
-      width: 100%;
-    }
-  
-    .gallery__arrow-icon {
-      font-size: 1.5rem; /* Smaller arrows on mobile */
-    }
-  }
-  
+}

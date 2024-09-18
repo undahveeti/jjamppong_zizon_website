@@ -1,8 +1,12 @@
 .menu__container {
-    background-image: url('../../assets/header.png'); /* Assuming you have a header image */
+    background-image: url('../../assets/mainvisual.png');
+    background-size: cover; /* This ensures the image covers the entire container */
+    background-position: center; /* This centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
     width: 100%;
     overflow-x: hidden;
     padding: 20px;
+    padding-bottom: 5rem;
   }
   
   .menu__scroll-wrapper {

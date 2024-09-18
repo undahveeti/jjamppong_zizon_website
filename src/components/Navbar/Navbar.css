@@ -1,167 +1,295 @@
-/* General Navbar styles */
+
 .app__navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-image: url('../../assets/header.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 1rem 2rem;
-  }
-  
-  .app__navbar-logo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  
-  .app__navbar-logo img {
-    width: 300px; /* Expanded logo size */
-    transition: all 0.3s ease;
-  }
-  
-  .app__navbar-logo img:hover {
-    transform: scale(1.05); /* Slight hover effect on logo */
-  }
-  
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url('../../assets/header.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 1rem 2rem;
+}
+
+.app__navbar-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.app__navbar-logo img {
+  width: 300px; /* Expanded logo size */
+  transition: all 0.3s ease;
+}
+
+.app__navbar-logo img:hover {
+  transform: scale(1.05); /* Slight hover effect on logo */
+}
+
+.app__navbar-links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.app__navbar-links li {
+  font-size: 20px;
+  margin: 0 4rem;
+  cursor: pointer;
+}
+
+.app__navbar-links li:hover {
+  color: var(--color-grey);
+}
+
+/* Language switch buttons */
+.app__navbar-language {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px; /* Space between buttons */
+}
+
+.language-button {
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  color: #fff;
+  background-color: var(--color-fire);
+  border: 2px solid #fff; /* White border */
+  border-radius: 20px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.language-button:hover {
+  background-color: #fff;
+  color: var(--color-fire); /* Invert colors on hover */
+}
+
+.app__navbar-login {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.app__navbar-smallscreen {
+  display: none;
+}
+
+/* Small screen (mobile) overlay styles */
+.app__navbar-smallscreen_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--color-fire);
+  transition: 0.5s ease;
+  flex-direction: column;
+  z-index: 5;
+}
+
+.app__navbar-smallscreen_overlay .overlay_close {
+  font-size: 27px;
+  color: var(--color-white);
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.app__navbar-smallscreen_links {
+  list-style: none;
+}
+
+.app__navbar-smallscreen_links li {
+  margin: 2rem;
+  color: var(--color-white);
+  cursor: pointer;
+  font-size: 2rem;
+  text-align: center;
+  font-family: var(--font-spicy);
+}
+
+.app__navbar-smallscreen_links li:hover {
+  color: var(--color-white);
+}
+
+/* Mobile language switch buttons */
+.app__navbar-language-smallscreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.language-button {
+  padding: 0.5rem 1.5rem;
+  font-size: 16px;
+  color: #fff;
+  background-color: var(--color-fire);
+  border: 1px solid #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.language-button:hover {
+  background-color: #fff;
+  color: var(--color-fire);
+}
+
+/* Dropdown for About */
+.app__navbar-item {
+  position: relative;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.app__navbar-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(178, 34, 34, 0.6); /* Fire red background */
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(10px);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.app__navbar-item:hover .app__navbar-dropdown {
+  opacity: 1;
+  transform: translateY(0); /* Slide into view */
+  visibility: visible;
+}
+
+.app__navbar-dropdown li {
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
+
+.app__navbar-dropdown li a {
+  color: var(--color-white); /* White text for contrast */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.app__navbar-dropdown li a:hover {
+  color: var(--color-crimson); /* Crimson on hover */
+}
+
+.app__navbar-smallscreen-dropdown {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.app__navbar-smallscreen-dropdown li {
+  margin-bottom: 0.5rem;
+}
+
+.app__navbar-smallscreen-dropdown li a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.app__navbar-smallscreen-dropdown li a:hover {
+  color: var(--color-crimson); /* Crimson on hover */
+}
+
+
+/* Order Now Button */
+.order-button {
+  background-color: var(--color-fire);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.order-button:hover {
+  background-color: var(--color-crimson);
+}
+
+/* Media Queries */
+@media screen and (max-width: 1150px) {
   .app__navbar-links {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-  }
-  
-  .app__navbar-links li {
-    font-size: 20px;
-    margin: 0 4rem;
-    cursor: pointer;
-  }
-  
-  .app__navbar-links li:hover {
-    color: var(--color-grey);
-  }
-  
-  /* Language switch buttons */
-  .app__navbar-language {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px; /* Space between buttons */
-  }
-  
-  .language-button {
-    padding: 0.5rem 1rem;
-    font-size: 14px;
-    color: #fff;
-    background-color: var(--color-fire);
-    border: 2px solid #fff; /* White border */
-    border-radius: 20px; /* Rounded corners */
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .language-button:hover {
-    background-color: #fff;
-    color: var(--color-fire); /* Invert colors on hover */
-  }
-  
-  .app__navbar-login {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  
-  .app__navbar-smallscreen {
     display: none;
   }
-  
-  /* Small screen (mobile) overlay styles */
-  .app__navbar-smallscreen_overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--color-fire);
-    transition: 0.5s ease;
-    flex-direction: column;
-    z-index: 5;
-  }
-  
-  .app__navbar-smallscreen_overlay .overlay_close {
-    font-size: 27px;
-    color: var(--color-white);
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-  
-  .app__navbar-smallscreen_links {
-    list-style: none;
-  }
-  
-  .app__navbar-smallscreen_links li {
-    margin: 2rem;
-    color: var(--color-white);
-    cursor: pointer;
-    font-size: 2rem;
-    text-align: center;
-    font-family: var(--font-spicy);
-  }
-  
-  .app__navbar-smallscreen_links li:hover {
-    color: var(--color-white);
-  }
-  
-  /* Mobile language switch buttons */
-  .app__navbar-language-smallscreen {
+
+  .app__navbar-smallscreen {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
   }
-  
-  .language-button {
-    padding: 0.5rem 1.5rem;
-    font-size: 16px;
-    color: #fff;
+}
+
+@media screen and (max-width: 650px) {
+  .app__navbar-dropdown {
+    position: static;
     background-color: var(--color-fire);
-    border: 1px solid #fff;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    padding: 0.5rem;
+    box-shadow: none;
+    border-radius: 0;
+    visibility: visible;
+    opacity: 1; /* Ensure it's visible on mobile */
+    transform: none;
   }
-  
-  .language-button:hover {
-    background-color: #fff;
-    color: var(--color-fire);
+
+  .app__navbar-item {
+    padding: 0.5rem 0;
   }
-  
-  @media screen and (max-width: 1150px) {
-    .app__navbar-links {
-      display: none;
-    }
-  
-    .app__navbar-smallscreen {
-      display: flex;
-    }
+
+  .app__navbar-dropdown li {
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
   }
-  
-  @media screen and (max-width: 650px) {
-    .app__navbar {
-      padding: 1rem;
-    }
-  
-    .app__navbar-login {
-      display: none;
-    }
-  
-    .app__navbar-logo img {
-      width: 150px; /* Responsive logo size on mobile */
-    }
+
+  .app__navbar-logo img {
+    width: 150px;
   }
-  
+
+  .app__navbar {
+    padding: 1rem;
+  }
+
+  .app__navbar-login {
+    display: none;
+  }
+}
+
+/* New CSS for Small Screen About Dropdown */
+.app__navbar-smallscreen-dropdown {
+  background-color: rgba(178, 34, 34, 0.7); /* Transparent fire red */
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}
+
+.app__navbar-smallscreen-dropdown li {
+  margin-bottom: 0.75rem;
+}
+
+.app__navbar-smallscreen-dropdown li a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.app__navbar-smallscreen-dropdown li a:hover {
+  color: var(--color-crimson);
+}

@@ -8,12 +8,17 @@ const resources = {
   en: {
     translation: {
       navbar: {
-        home: "Home",
         about: "About Us",
         menu: "Menu",
         news: "News",
         gallery: "Gallery",
         contact: "Contact",
+        history: "History",
+        locations: "Locations",
+        store: "Store", // New translation for "Store"
+        intdesign: "Interior Design", // New translation for "Interior Design"
+        franchise: "Franchise", // New translation for "Franchise"
+        whyUs: "Why Us?", // New translation for "Why Us?"
       },
       header: {
         subheading: "Chase the new flavour",
@@ -110,12 +115,17 @@ const resources = {
   ko: {
     translation: {
       navbar: {
-        home: "홈",
         about: "소개",
         menu: "메뉴",
         news: "뉴스",
         gallery: "갤러리",
         contact: "오시는 길",
+        history: "역사",
+        locations: "매장 위치",
+        store: "매장", // New translation for "Store"
+        intdesign: "인테리어 디자인", // New translation for "Interior Design"
+        franchise: "프랜차이즈", // New translation for "Franchise"
+        whyUs: "왜 우리?", // New translation for "Why Us?"
       },
       header: {
         subheading: "새로운 맛을 추구하세요",

@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+.main-content {
+  padding-bottom: 800px; /* Adjust this value based on the height of your footer */
+}
+
 .app__bg {
   background-color: floralwhite;
   /*background: url('./assets/bg.png');*/
@@ -18,6 +22,7 @@
 }
 
 .app__wrapper {
+  background-color: floralwhite;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -98,7 +103,7 @@
 .p__spicy {
   font-family: var(--font-spicy);
   color: var(--color-fire);
-  font-weight: 500;
+  font-weight: bolder;
   font-variant: small-caps;
   letter-spacing: 0.04em;
   text-transform: capitalize;
@@ -110,7 +115,7 @@
 .p__original{
   font-family: var(--font-spicy);
   color: var(--color-white);
-  font-weight: 500;
+  font-weight: bolder;
   font-variant: small-caps;
   letter-spacing: 0.04em;
   text-transform: capitalize;

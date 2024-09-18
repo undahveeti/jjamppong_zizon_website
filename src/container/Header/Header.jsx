@@ -1,30 +1,48 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next'; // Import useTranslation for translations
 
-import { images } from '../../constants';
+import { meal } from '../../constants';
 import './Header.css';
-import { SubHeading } from '../../components';
+import zizon from '../../assets/zizon.PNG';  // Import your logo here (adjust the path as needed)
 
 const Header = () => {
-  const { t } = useTranslation(); // Initialize useTranslation hook
+  const [playVideo, setPlayVideo] = React.useState(false);
+  const vidRef = React.useRef();
 
   return (
-    <div className="app__header app__bg app__wrapper section__padding" id="home">
-      <div className="app__wrapper_info">
-        <SubHeading title={t('header.subheading')} />
-        <h1 className="app__header-h1">{t('header.title')}</h1>
-        <p className="p__spicy" style={{ margin: '2rem 0' }}>{t('header.content')}</p>
-        {/* security reasons when opening potential vulnerabilities */}
-        <a href="https://www.instagram.com/jjamppong_zizon.la/" target="_blank" rel="noopener noreferrer">
-          <button type="button" className="custom__button">{t('header.button')}</button>
-        </a>
-      </div>
-      <div className="app__wrapper_img">
-        <img src={images.welcome} alt="header img" />
+    <div className="app__video">
+      <video
+        ref={vidRef}
+        src={meal}
+        type="video/mp4"
+        loop
+        controls={false}
+        muted
+      />
+      <div className="app__video-overlay flex__center">
+        <div
+          className="app__video-overlay_circle flex__center"
+          onClick={() => {
+            setPlayVideo(!playVideo);
+            if (playVideo) {
+              vidRef.current.pause();
+            } else {
+              vidRef.current.play();
+            }
+          }}
+        >
+          <img
+            src={zizon}
+            alt="play/pause logo"
+            style={{
+              width: '300px',  // Adjust the size of the logo
+              height: '100px',
+              cursor: 'pointer',
+            }}
+          />
+        </div>
       </div>
     </div>
   );
 };
 
 export default Header;
-
