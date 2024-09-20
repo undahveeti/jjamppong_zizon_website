@@ -21,25 +21,27 @@ app.post("/send-email", (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail", // Use the email service provider you want (e.g., Gmail, SendGrid, etc.)
     auth: {
-      user: "your-email@gmail.com", // Your email
-      pass: "your-password", // Your email password or app-specific password
+      user: "avtran0806@gmail.com", // Your email
+      pass: "@NDYtran22946580", // Your email password or app-specific password
     },
   });
 
   const mailOptions = {
     from: email, // Sender's email
-    to: "recipient-email@example.com", // Hidden email where the message will be sent
-    subject: "New Contact Form Message",
+    to: "undahvt@gmail.com", // Hidden email where the message will be sent
+    subject: "Testing",
     text: formattedMessage,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      return res.status(500).json({ error: "Error sending email." });
+      console.error("Error occurred:", error);
+      return res.status(500).json({ error: `Error sending email: ${error.message}` });
     }
+    console.log("Email sent:", info.response);
     res.status(200).json({ message: "Email sent successfully!" });
   });
-});
+  
 
 // Start server
 const PORT = process.env.PORT || 5000;
