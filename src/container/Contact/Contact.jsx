@@ -38,7 +38,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-form">
+    <div className="contact" id = "contact">
       <form onSubmit={handleSubmit}>
         <label>
           Name:
