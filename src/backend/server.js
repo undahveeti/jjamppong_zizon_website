@@ -2,7 +2,8 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-require("dotenv").config(); // Load environment variables from .env file
+require("dotenv").config({ path: './email.env' });
+
 
 const app = express();
 app.use(cors());
@@ -13,7 +14,7 @@ app.post("/send-email", (req, res) => {
 
   // Format the message content with user details
   const formattedMessage = `
-    You have received a new message from your website contact form:
+    You have received a new message from your restaurant's franchising inquiry form:
     
     Name: ${name}
     Email: ${email} 
@@ -33,7 +34,7 @@ app.post("/send-email", (req, res) => {
   const mailOptions = {
     from: `"${name}" <${email}>`, // The user's email (appears as the sender)
     to: process.env.RECEIVER_EMAIL, // Your inbox (where you want to receive the form submission)
-    subject: `New Message from ${name}`, // Subject includes the user's name
+    subject: `Franchising Inquiry from ${name}`, // Subject includes the user's name
     text: formattedMessage, // The message body includes all the user details
   };
 
