@@ -2,6 +2,7 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+require("dotenv").config(); // Load environment variables from .env file
 
 const app = express();
 app.use(cors());
@@ -10,40 +11,44 @@ app.use(bodyParser.json());
 app.post("/send-email", (req, res) => {
   const { email, name, message, phoneNumber } = req.body;
 
-  // Reorder the info as: message, name, phoneNumber
+  // Format the message content with user details
   const formattedMessage = `
-    Message: ${message}
+    You have received a new message from your website contact form:
+    
     Name: ${name}
+    Email: ${email} 
     Phone Number: ${phoneNumber}
+    Message: ${message}
   `;
 
-  // Create a nodemailer transporter
+  // Create a transporter using the constant EMAIL_USER (your email account)
   const transporter = nodemailer.createTransport({
-    service: "gmail", // Use the email service provider you want (e.g., Gmail, SendGrid, etc.)
+    service: "gmail",
     auth: {
-      user: "avtran0806@gmail.com", // Your email
-      pass: "@NDYtran22946580", // Your email password or app-specific password
+      user: process.env.EMAIL_USER, // Your constant email account used for sending
+      pass: process.env.EMAIL_PASS, // App-specific password for your email account
     },
   });
 
   const mailOptions = {
-    from: email, // Sender's email
-    to: "undahvt@gmail.com", // Hidden email where the message will be sent
-    subject: "Testing",
-    text: formattedMessage,
+    from: `"${name}" <${email}>`, // The user's email (appears as the sender)
+    to: process.env.RECEIVER_EMAIL, // Your inbox (where you want to receive the form submission)
+    subject: `New Message from ${name}`, // Subject includes the user's name
+    text: formattedMessage, // The message body includes all the user details
   };
 
+  // Send the email
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error("Error occurred:", error);
       return res.status(500).json({ error: `Error sending email: ${error.message}` });
     }
     console.log("Email sent:", info.response);
-    res.status(200).json({ message: "Email sent successfully!" });
+    res.status(200).json({ message: "Message sent successfully!" });
   });
-  
+});
 
-// Start server
+// Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
