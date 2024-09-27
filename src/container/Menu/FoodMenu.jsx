@@ -73,7 +73,7 @@ const FoodMenu = () => {
 
   return (
     <div className="menu__container">
-    
+      
       <div className="menu__scroll-wrapper"> {/* Scrollable wrapper */}
         {dishes.map((dish) => (
           <div key={dish.id} className="menu__item">

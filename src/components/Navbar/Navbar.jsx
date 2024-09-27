@@ -57,7 +57,7 @@ const Navbar = () => {
           {locationDropdown && (
             <ul className="app__navbar-dropdown">
               <li className="p__original"><Link to="/find-store">{t('navbar.locations')}</Link></li>
-              <li className="p__original"><Link to="/interior-design">{t('navbar.intdesign')}</Link></li>
+              <li className="p__original"><Link to="/interior">{t('navbar.intdesign')}</Link></li>
             </ul>
           )}
         </li>
@@ -112,7 +112,7 @@ const Navbar = () => {
                 {smallLocationDropdown && (
                   <ul className="app__navbar-smallscreen-dropdown">
                     <li className="p__spicy"><Link to="/find-store">{t('navbar.locations')}</Link></li>
-                    <li className="p__spicy"><Link to="/interior-design">{t('navbar.intdesign')}</Link></li>
+                    <li className="p__spicy"><Link to="/interior">{t('navbar.intdesign')}</Link></li>
                   </ul>
                 )}
               </li>

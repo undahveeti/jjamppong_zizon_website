@@ -9,6 +9,7 @@ import Laurels from './Laurels/Laurels';
 import SpecialMenu from './Menu/SpecialMenu';
 import FoodMenu from './Menu/FoodMenu';
 import Contact from './Contact/Contact';
+import Interior from './Interior/Interior';
 
 export {
   Contact,
@@ -22,4 +23,5 @@ export {
   Laurels,
   SpecialMenu,
   FoodMenu,
+  Interior,
 };

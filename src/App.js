@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
-import { AboutUs, Chef, FindUs, Footer, Gallery, Header, Intro, Laurels, SpecialMenu, FoodMenu, Contact} from './container';
+import { AboutUs, Chef, FindUs, Footer, Gallery, Header, Intro, Laurels, SpecialMenu, FoodMenu, Contact, Interior} from './container';
 import { Navbar } from './components';
 import './App.css';
 import './i18n'; // Import the i18n configuration
@@ -32,6 +32,7 @@ const MainContent = () => {
           <Route path="/news" element={<Laurels />} />
           <Route path="/find-store" element={<FindUs />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/interior" element={<Interior />} />
         </Routes>
       </div>
 
