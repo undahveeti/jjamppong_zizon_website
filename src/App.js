@@ -19,8 +19,8 @@ const MainContent = () => {
             path="/"
             element={
               <>
-                <Header />
-                <Gallery />
+               <Header />
+               <Footer />
               </>
             }
           />
@@ -35,8 +35,6 @@ const MainContent = () => {
         </Routes>
       </div>
 
-      {/* Conditionally render Footer only on the home page */}
-      {location.pathname === '/' && <Footer />}
     </>
   );
 };

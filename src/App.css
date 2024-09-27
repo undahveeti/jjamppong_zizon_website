@@ -8,9 +8,21 @@
   align-items: center;
 }
 
-.main-content {
-  padding-bottom: 800px; /* Adjust this value based on the height of your footer */
+html, body {
+  height: 100%;
+  margin: 0;
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
 
 .app__bg {
   background-color: floralwhite;

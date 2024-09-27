@@ -40,7 +40,8 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact" id="contact">
+    <div className="contact p__spicy" id="contact">
+      <h1>contact us</h1>
       <form onSubmit={handleSubmit}>
         {/* Form fields for user's name, email, phone number, and message */}
         <label>
@@ -50,6 +51,7 @@ const Contact = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
+            placeholder="Your Name"
             required
           />
         </label>
@@ -61,6 +63,7 @@ const Contact = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
+            placeholder="Your Email"
             required
           />
         </label>
@@ -72,6 +75,7 @@ const Contact = () => {
             name="phoneNumber"
             value={formData.phoneNumber}
             onChange={handleChange}
+            placeholder="Your Phone Number"
             required
           />
         </label>
@@ -82,6 +86,7 @@ const Contact = () => {
             name="message"
             value={formData.message}
             onChange={handleChange}
+            placeholder="Your Message"
             required
           />
         </label>
