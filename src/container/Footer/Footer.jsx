@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <div className="app__footer app__bg " id="login">
       <FooterOverlay />
-      <Newsletter />
+      
 
       <div className="app__footer-links">
         <div className="app__footer-links_contact">

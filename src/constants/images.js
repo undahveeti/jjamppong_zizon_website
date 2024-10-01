@@ -37,8 +37,20 @@ import crab from '../assets/crab.png';
 import shrimp from '../assets/shrimp.png';
 import visual1 from '../assets/mainvisual.png';
 import visual2 from '../assets/mainvisual2.png';
+import interior from '../assets/interior.png';
+import interior2 from '../assets/interior2.png';
+import interior4 from '../assets/interior4.png';
+import interior5 from '../assets/interior5.png';
+import interior6 from '../assets/interior6.png';
+import interior7 from '../assets/interior7.png';
 
 export default {
+  interior,
+  interior2,
+  interior4,
+  interior5,
+  interior6,
+  interior7,
   visual1,
   visual2,
   soup,

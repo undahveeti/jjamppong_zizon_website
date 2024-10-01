@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next'; // Import useTranslation for translations
 import './FoodMenu.css'; // Ensure your original CSS is linked
 import { images } from '../../constants'; // Assuming images are in a constants file
-
 const FoodMenu = () => {
   const { t } = useTranslation(); // Initialize useTranslation hook
 
@@ -74,6 +73,7 @@ const FoodMenu = () => {
 
   return (
     <div className="menu__container">
+      
       <div className="menu__scroll-wrapper"> {/* Scrollable wrapper */}
         {dishes.map((dish) => (
           <div key={dish.id} className="menu__item">
