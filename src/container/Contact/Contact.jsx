@@ -23,7 +23,7 @@ const Contact = () => {
 
     try {
       // Send form data to the backend API via POST request
-      await axios.post("http://localhost:5000/send-email", formData);
+      await axios.post("http://localhost:5001/send-email", formData);
 
       // Clear the form after successful submission
       setFormData({
