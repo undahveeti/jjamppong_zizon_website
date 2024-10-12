@@ -43,8 +43,22 @@ import interior4 from '../assets/interior4.png';
 import interior5 from '../assets/interior5.png';
 import interior6 from '../assets/interior6.png';
 import interior7 from '../assets/interior7.png';
+import chili from '../assets/chili.png';
+import nood from '../assets/nood.png';
+import mussle from '../assets/mussle.png';
+import recycle from '../assets/recycle.png';
+import noop from '../assets/noop.png';
+import chili2 from '../assets/chiliiii.png';
+import pinky from '../assets/pinkypromise.png';
 
 export default {
+  noop,
+  chili2,
+  pinky,
+  chili,
+  nood,
+  mussle,
+  recycle,
   interior,
   interior2,
   interior4,
