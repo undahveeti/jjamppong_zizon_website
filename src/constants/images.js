@@ -50,8 +50,14 @@ import recycle from '../assets/recycle.png';
 import noop from '../assets/noop.png';
 import chili2 from '../assets/chiliiii.png';
 import pinky from '../assets/pinkypromise.png';
+import map from '../assets/map.png'
+import business from '../assets/business.png';
+import mashita from '../assets/mashita.png';
 
 export default {
+  mashita,
+  business,
+  map,
   noop,
   chili2,
   pinky,

@@ -1,12 +1,14 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next'; // Import useTranslation hook
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './Interior.css'; // Ensure to have the updated CSS file
-import { images } from '../../constants'; // Import the images
-import { Navbar } from '../../components';
+import './Interior.css';
+import { images } from '../../constants';
 
 const Interior = () => {
+  const { t } = useTranslation(); // Initialize useTranslation hook
+
   // Array of interior images
   const items = [
     images.interior, 
@@ -38,8 +40,6 @@ const Interior = () => {
 
   return (
     <div className="interior-page">
-
-
       {/* Image Carousel with text overlay */}
       <div className="carousel-container">
         <Slider {...sliderSettings}>
@@ -52,7 +52,7 @@ const Interior = () => {
               />
               {/* Text Overlay */}
               <div className="image-overlay">
-                <h1 className="overlay-title">Interior Design {index + 1}</h1>
+                <h1 className="overlay-title">{t('interiorPage.slideTitle')} {index + 1}</h1> {/* Translated title */}
               </div>
             </div>
           ))}

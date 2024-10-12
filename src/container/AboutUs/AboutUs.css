@@ -1,133 +1,158 @@
+/* Apply background image only for the About Us page */
+.about-us-page {
+    background-image: url('../../assets/chilis.PNG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* For parallax effect */
+    min-height: 100vh; /* Ensure the background covers the full height */
+}
+
+/* The rest of your About Us page styles remain unchanged */
 .about-us-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for blending */
     padding: 40px;
     text-align: center;
     position: relative;
     overflow: hidden;
-  }
-  
-  .about-us-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+ 
+}
+
+/* Rest of the CSS remains unchanged */
+
+
+.about-us-header {
     margin-bottom: 50px;
-  }
-  
-  .about-us-header h2 {
-    font-size: 36px; /* Increase font size for better visibility */
+}
+
+.about-us-header h2 {
+    font-size: 36px;
     color: #ff4500;
     font-family: 'Georgia', serif;
     font-weight: bold;
-  }
-  
-  .about-us-promises {
+}
+
+.about-us-promises {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
     justify-items: center;
     align-items: center;
-    max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  .promise-item {
+}
+
+.promise-item {
     text-align: center;
     padding: 20px;
-  }
-  
-  .promise-image {
+}
+
+.promise-image {
     width: 120px;
     height: auto;
-  }
-  
-  .promise-text {
+}
+
+.promise-text {
     margin-top: 20px;
-  }
-  
-  .promise-text h3 {
+}
+
+.promise-text h3 {
     font-size: 24px;
     color: #ff4500;
     margin-bottom: 10px;
     font-family: 'Georgia', serif;
     font-weight: bold;
-  }
-  
-  .promise-text p {
+}
+
+.promise-text p {
     font-size: 16px;
     color: #333;
     font-family: 'Georgia', serif;
-  }
-  
-  /* Decorative Images */
-  .top-images, .bottom-images {
+}
+
+/* Decorative Images */
+.top-images, .bottom-images {
     position: absolute;
     width: 100%;
-    z-index: 0; /* Higher z-index so they are visible, but behind the text */
-  }
-  
-  .top-images {
+    z-index: 0;
+}
+
+.top-images {
     top: 0;
     left: 0;
     right: 0;
     display: flex;
     justify-content: space-between;
     padding: 0 40px;
-  }
-  
-  .bottom-images {
+}
+
+.bottom-images {
     bottom: 0;
     left: 0;
     right: 0;
     display: flex;
     justify-content: flex-end;
     padding-right: 40px;
-  }
-  
-  .decorative-image {
-    opacity: 0.9; /* Higher opacity for better visibility */
-  }
-  
-  .pinky-promise {
+}
+
+.decorative-image {
+    opacity: 0.9;
+    transition: transform 0.3s ease-in-out;
+}
+
+.pinky-promise {
     width: 220px;
     height: auto;
     position: absolute;
-    left: 15%; /* Moved inward */
-    top: 30px; /* Adjusted for visibility */
+    left: 10%;
+    top: 30px;
     z-index: 1;
-    transform: rotate(-5deg); /* Slight rotation */
-  }
-  
-  .noodles-top {
+    transform: rotate(-5deg);
+}
+
+.noodles-top {
     width: 240px;
     height: auto;
     position: absolute;
-    right: 8%; /* Moved inward slightly */
-    top: 10px; /* Lowered for more visibility */
+    right: 10%;
+    top: 20px;
     z-index: 1;
-    transform: rotate(-3deg); /* Rotate in the opposite direction */
-  }
-  
-  .chilies-bottom {
-    width: 280px; /* Increased size */
+    transform: rotate(5deg);
+}
+
+.chilies-bottom {
+    width: 280px;
     height: auto;
     position: absolute;
-    bottom: -30px;
-    right: 15%;
+    bottom: 10px;
+    right: 0;
     z-index: 1;
     transform: rotate(-8deg);
-  }
-  
-  @media (max-width: 768px) {
+}
+
+/* Hover effect for images */
+.about-us-container:hover .decorative-image {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     .about-us-promises {
-      grid-template-columns: 1fr; /* Stack items vertically on small screens */
+        grid-template-columns: 1fr;
     }
-  
+
     .promise-item {
-      margin-bottom: 30px;
+        margin-bottom: 30px;
     }
-  
+
     .top-images, .bottom-images {
-      display: none; /* Hide images on smaller screens for better readability */
+        display: none;
     }
-  
+
     .about-us-header h2 {
-      font-size: 28px;
+        font-size: 28px;
     }
-  }
-  
+}

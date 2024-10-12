@@ -18,7 +18,7 @@ const resources = {
         store: "Store", // New translation for "Store"
         intdesign: "Interior Design", // New translation for "Interior Design"
         franchise: "Franchise", // New translation for "Franchise"
-        whyUs: "Why Us?", // New translation for "Why Us?"
+        orderOnline: "Order Online",
       },
       header: {
         subheading: "Chase the new flavour",
@@ -26,9 +26,38 @@ const resources = {
         content: "Discover the unique and flavorful experience that sets us apart. Join us and taste the difference!",
         button: "Explore More"
       },
-      about: {
-        title: "About Us",
-        content: `Discover South Korea's Premier Spicy Noodle Experience with over 100 Locations Nationwide. At our heart lies a passion for vibrant flavors, which is why we handpick only the finest red peppers, sourced for their fiery zest and harvested at the pinnacle of ripeness. This meticulous selection fuels the distinctive, robust flavor of our 100% natural Goobne pepper sauce—a cornerstone of our culinary offerings. Every bowl promises a journey of taste, crafted from ingredients that are nurtured from seed to sauce, ensuring each dish not only tingles your palate but also meets the highest standards of quality. Join us for an unforgettable adventure in flavor, where traditional craftsmanship meets the fiery essence of Korea.`,
+      aboutPage: {
+        title: "We Promise 4 Things to Our Customers!",
+        promise1: {
+          title: "Top Quality Chili",
+          description: "We use only the finest quality local chili powder."
+        },
+        promise2: {
+          title: "Fresh Noodles",
+          description: "We prepare our chewy noodles with care and precision."
+        },
+        promise3: {
+          title: "No Seafood Byproducts",
+          description: "We do not use seafood byproducts to increase quantity."
+        },
+        promise4: {
+          title: "No Reused Ingredients",
+          description: "We never reuse any food or ingredients."
+        },
+      },
+      findUsPage: {
+        tableHeaders: {
+          storePhoto: "Store Photo",
+          storeName: "Store Name",
+          address: "Address",
+          phone: "Phone Number",
+          storeInfo: "Store Information",
+          map: "Location Map",
+        },
+        storeInfoButton: "Store Information",
+        businessHours: "Business Hours",
+        franchisee: "Mama Sue",
+        closeModal: "Close",
       },
       laurels: {
         title1: "We're turning the heat up!",
@@ -42,6 +71,19 @@ const resources = {
         drink2: "Beer (Terra, Cass)",
         drink3: "Cola 500ml",
         drink4: "Cider 500ml",
+      },
+      interiorPage: {
+        slideTitle: "Interior Design",  // Title for each slide
+      },
+      contactPage: {
+        heading: "Contact Us",
+        nameLabel: "Name:",
+        emailLabel: "Email:",
+        phoneLabel: "Phone Number:",
+        messageLabel: "Message:",
+        sendButton: "Send",
+        successMessage: "Message sent successfully!",
+        errorMessage: "There was an error sending your message.",
       },
       menu: {
         dish1: {
@@ -125,7 +167,7 @@ const resources = {
         store: "매장", // New translation for "Store"
         intdesign: "인테리어 디자인", // New translation for "Interior Design"
         franchise: "프랜차이즈", // New translation for "Franchise"
-        whyUs: "왜 우리?", // New translation for "Why Us?"
+        orderOnline: "온라인 주문",
       },
       header: {
         subheading: "새로운 맛을 추구하세요",
@@ -133,10 +175,40 @@ const resources = {
         content: "우리의 독특하고 맛있는 경험을 만나보세요. 차이를 맛보세요!",
         button: "더 알아보기"
       },
-      about: {
-        title: "소개",
-        content: `전국 100개 이상의 매장에서 대한민국 최고의 매운 국수 경험을 만나보세요. 우리는 생생한 풍미에 대한 열정으로 최고의 홍고추만을 선별하여, 가장 매운 맛을 내는 고추를 수확하여 사용합니다. 이 정성을 다한 고추는 우리의 100% 자연산 굽네 고추 소스의 독특하고 강력한 맛을 만듭니다. 매일 우리는 씨앗부터 소스까지 신선한 재료를 사용하여 최고의 품질을 보장하며, 각 요리가 입맛을 자극할 뿐만 아니라 뛰어난 품질을 유지하도록 보장합니다. 전통적인 장인 정신과 한국의 매운 맛이 결합된 잊지 못할 맛의 여행에 함께 하세요.`,
+      aboutPage: {
+          title: "고객님께 4가지 약속을 드립니다!",
+          promise1: {
+            title: "최고 품질의 고추",
+            description: "우리는 최고의 품질을 자랑하는 현지 고춧가루만 사용합니다."
+          },
+          promise2: {
+            title: "신선한 국수",
+            description: "저희는 쫄깃한 국수를 정성껏 준비합니다."
+          },
+          promise3: {
+            title: "해산물 부산물 없음",
+            description: "우리는 양을 늘리기 위해 해산물 부산물을 사용하지 않습니다."
+          },
+          promise4: {
+            title: "재사용하지 않는 재료",
+            description: "우리는 재료를 절대 재사용하지 않습니다."
       },
+    },
+    findUsPage: {
+      tableHeaders: {
+        storePhoto: "매장 사진",
+        storeName: "매장 이름",
+        address: "주소",
+        phone: "전화번호",
+        storeInfo: "매장 정보",
+        map: "위치 지도",
+      },
+      storeInfoButton: "매장 정보",
+      businessHours: "영업 시간",
+      franchisee: "Mama Sue", 
+      closeModal: "닫기",
+    },
+    
       laurels: {
         title1: "우리는 열기를 더하고 있어요!",
         description1: "Eater LA가 여름 개장을 다룹니다!",
@@ -149,6 +221,9 @@ const resources = {
         drink2: "맥주 (테라, 카스)",
         drink3: "콜라 500ml",
         drink4: "사이다 500ml",
+      },
+      interiorPage: {
+        slideTitle: "인테리어 디자인",  // Title for each slide
       },
       
       menu: {
@@ -216,6 +291,16 @@ const resources = {
         days: "월요일-일요일:",
         hours: "오전 10:00 - 오후 9:00",
         copyright: "2024 지존 짬뽕. 모든 권리 보유.",
+      },
+      contactPage: {
+        heading: "문의하기",
+        nameLabel: "이름:",
+        emailLabel: "이메일:",
+        phoneLabel: "전화번호:",
+        messageLabel: "메시지:",
+        sendButton: "보내기",
+        successMessage: "메시지가 성공적으로 전송되었습니다!",
+        errorMessage: "메시지를 보내는 동안 오류가 발생했습니다.",
       },
       // other translations...
     },

@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { images } from '../../constants';
-
 import './FindUs.css';
 
 const FindUs = () => {
-  const { t } = useTranslation();
-  const [selectedStore, setSelectedStore] = useState(null); // Track selected store for modal
-  const [hoveredImage, setHoveredImage] = useState(null); // Track hovered image for enlarged display
-  const [hoveredMap, setHoveredMap] = useState(null); // Track hovered map for enlarged display
+  const { t } = useTranslation(); // Initialize useTranslation hook
+  const [selectedStore, setSelectedStore] = useState(null);
+  const [hoveredImage, setHoveredImage] = useState(null);
+  const [hoveredMap, setHoveredMap] = useState(null);
 
-  // Store data
   const stores = [
     {
       id: 1,
@@ -34,127 +32,122 @@ const FindUs = () => {
     },
   ];
 
-  // Open Modal
   const openModal = (store) => {
     setSelectedStore(store);
   };
 
-  // Close Modal
   const closeModal = () => {
     setSelectedStore(null);
   };
 
   return (
-    <div className="app__wrapper section__padding" id="find-store">
-      
-      {/* Store Table */}
-      <table className="store-table">
-        <thead>
-          <tr>
-            <th>Store Photo</th>
-            <th>Store Name</th>
-            <th>Address</th>
-            <th>Phone Number</th>
-            <th>Store Information</th>
-            <th>Location Map</th>
-          </tr>
-        </thead>
-        <tbody>
-          {stores.map((store) => (
-            <tr key={store.id} style={{ textAlign: 'center' }}>
-              <td
-                onMouseEnter={() => setHoveredImage(store.image)}
-                onMouseLeave={() => setHoveredImage(null)}
-              >
-                <img src={store.image} alt={store.name} className="store-image" />
-              </td>
-              <td>{store.name}</td>
-              <td>{store.address}</td>
-              <td>{store.phone}</td>
-              <td>
-                <button className="custom__button" onClick={() => openModal(store)}>
-                  Store Information
-                </button>
-              </td>
-              <td
-                onMouseEnter={() => setHoveredMap(store.mapLink)}
-                onMouseLeave={() => setHoveredMap(null)}
-              >
-                {/* Embedded Google Map */}
-                <iframe 
-                  src={store.mapLink} 
-                  width="250" 
-                  height="150" 
-                  style={{ border: 0 }} 
-                  allowFullScreen="" 
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title={`${store.name} Location Map`}
-                  className="store-map"
-                ></iframe>
-              </td>
+    <div className="find-us-page"> {/* Unique wrapper for Find Us page */}
+      <div className="section__padding" id="find-store">
+        {/* Store Table */}
+        <table className="store-table">
+          <thead>
+            <tr>
+              <th>{t('findUsPage.tableHeaders.storePhoto')}</th>
+              <th>{t('findUsPage.tableHeaders.storeName')}</th>
+              <th>{t('findUsPage.tableHeaders.address')}</th>
+              <th>{t('findUsPage.tableHeaders.phone')}</th>
+              <th>{t('findUsPage.tableHeaders.storeInfo')}</th>
+              <th>{t('findUsPage.tableHeaders.map')}</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {stores.map((store) => (
+              <tr key={store.id} style={{ textAlign: 'center' }}>
+                <td
+                  onMouseEnter={() => setHoveredImage(store.image)}
+                  onMouseLeave={() => setHoveredImage(null)}
+                >
+                  <img src={store.image} alt={store.name} className="store-image" />
+                </td>
+                <td>{store.name}</td>
+                <td>{store.address}</td>
+                <td>{store.phone}</td>
+                <td>
+                  <button className="custom__button" onClick={() => openModal(store)}>
+                    {t('findUsPage.storeInfoButton')}
+                  </button>
+                </td>
+                <td
+                  onMouseEnter={() => setHoveredMap(store.mapLink)}
+                  onMouseLeave={() => setHoveredMap(null)}
+                >
+                  {/* Embedded Google Map */}
+                  <iframe 
+                    src={store.mapLink} 
+                    width="250" 
+                    height="150" 
+                    style={{ border: 0 }} 
+                    allowFullScreen="" 
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`${store.name} Location Map`}
+                    className="store-map"
+                  ></iframe>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
-      {/* Hovered Enlarged Image */}
-      {hoveredImage && (
-        <div className="enlarged-overlay">
-          <img src={hoveredImage} alt="Enlarged" className="enlarged-item" />
-        </div>
-      )}
-
-      {/* Hovered Enlarged Map */}
-      {hoveredMap && (
-        <div className="enlarged-overlay">
-          <iframe
-            src={hoveredMap}
-            width="600"
-            height="400"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Enlarged Map"
-            className="enlarged-item"
-          ></iframe>
-        </div>
-      )}
-
-      {/* Store Information Modal */}
-      {selectedStore && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h2>{selectedStore.name}</h2>
-            <table>
-              <tbody>
-                <tr>
-                  <td><strong>Branch Name:</strong></td>
-                  <td>{selectedStore.name}</td>
-                </tr>
-                <tr>
-                  <td><strong>Franchisee:</strong></td>
-                  <td>{selectedStore.franchisee}</td>
-                </tr>
-                <tr>
-                  <td><strong>Contact:</strong></td>
-                  <td>{selectedStore.phone}</td>
-                </tr>
-                <tr>
-                  <td><strong>Branch Address:</strong></td>
-                  <td>{selectedStore.address}</td>
-                </tr>
-                <tr>
-                  <td><strong>Business Hours:</strong></td>
-                  <td>{selectedStore.businessHours}</td>
-                </tr>
-              </tbody>
-            </table>
-            <button className="custom__button" onClick={closeModal}>Close</button>
+        {/* Hovered Enlarged Image */}
+        {hoveredImage && (
+          <div className="enlarged-overlay">
+            <img src={hoveredImage} alt="Enlarged" className="enlarged-item" />
           </div>
-        </div>
-      )}
+        )}
+
+        {/* Hovered Enlarged Map */}
+        {hoveredMap && (
+          <div className="enlarged-overlay">
+            <iframe
+              src={hoveredMap}
+              width="600"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Enlarged Map"
+              className="enlarged-item"
+            ></iframe>
+          </div>
+        )}
+
+        {/* Store Information Modal */}
+        {selectedStore && (
+          <div className="modal-overlay" onClick={closeModal}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <h2>{selectedStore.name}</h2>
+              <table>
+                <tbody>
+                  <tr>
+                    <td><strong>{t('findUsPage.tableHeaders.storeName')}:</strong></td>
+                    <td>{selectedStore.name}</td>
+                  </tr>
+                  <tr>
+                    <td><strong>{t('findUsPage.tableHeaders.phone')}:</strong></td>
+                    <td>{selectedStore.phone}</td>
+                  </tr>
+                  <tr>
+                    <td><strong>{t('findUsPage.tableHeaders.address')}:</strong></td>
+                    <td>{selectedStore.address}</td>
+                  </tr>
+                  <tr>
+                    <td><strong>{t('findUsPage.businessHours')}:</strong></td>
+                    <td>{selectedStore.businessHours}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <button className="custom__button" onClick={closeModal}>{t('findUsPage.closeModal')}</button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

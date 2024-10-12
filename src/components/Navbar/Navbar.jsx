@@ -3,36 +3,34 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineRestaurant } from 'react-icons/md';
 
 import { useTranslation } from 'react-i18next';
-
 import images from '../../constants/images';
 import './Navbar.css';
-
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const { t, i18n } = useTranslation(); // useTranslation hook to switch languages
+  const { t, i18n } = useTranslation();
   const [toggleMenu, setToggleMenu] = useState(false);
-  const [dropdown, setDropdown] = useState(false); // dropdown for desktop "About"
-  const [smallDropdown, setSmallDropdown] = useState(false); // dropdown for mobile "About"
-  const [locationDropdown, setLocationDropdown] = useState(false); // dropdown for desktop "Locations"
-  const [smallLocationDropdown, setSmallLocationDropdown] = useState(false); // dropdown for mobile "Locations"
-  const [franchiseDropdown, setFranchiseDropdown] = useState(false); // dropdown for desktop "Franchise"
-  const [smallFranchiseDropdown, setSmallFranchiseDropdown] = useState(false); // dropdown for mobile "Franchise"
+  const [dropdown, setDropdown] = useState(false);
+  const [smallDropdown, setSmallDropdown] = useState(false);
+  const [franchiseDropdown, setFranchiseDropdown] = useState(false);
+  const [smallFranchiseDropdown, setSmallFranchiseDropdown] = useState(false);
+  const [orderDropdown, setOrderDropdown] = useState(false); // Order dropdown for desktop
+  const [smallOrderDropdown, setSmallOrderDropdown] = useState(false); // Order dropdown for mobile
 
   const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng); // Function to switch languages
+    i18n.changeLanguage(lng);
   };
 
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
         <Link to="/">
-          <img src={images.zizon} alt="app logo"/>
+          <img src={images.zizon} alt="app logo" />
         </Link>
       </div>
 
       <ul className="app__navbar-links p__original">
-        {/* Desktop About Dropdown */}
+        {/* About Us Dropdown */}
         <li className="app__navbar-item"
             onMouseEnter={() => setDropdown(true)}
             onMouseLeave={() => setDropdown(false)}
@@ -41,28 +39,17 @@ const Navbar = () => {
           {dropdown && (
             <ul className="app__navbar-dropdown">
               <li className="p__original"><Link to="/history">{t('navbar.history')}</Link></li>
-              <li className="p__original"><Link to="/food-menu">{t('navbar.menu')}</Link></li>
               <li className="p__original"><Link to="/news">{t('navbar.news')}</Link></li>
-    
             </ul>
           )}
         </li>
 
-        {/* Desktop Locations Dropdown */}
-        <li className="app__navbar-item"
-            onMouseEnter={() => setLocationDropdown(true)}
-            onMouseLeave={() => setLocationDropdown(false)}
-        >
-          {t('navbar.store')}
-          {locationDropdown && (
-            <ul className="app__navbar-dropdown">
-              <li className="p__original"><Link to="/find-store">{t('navbar.locations')}</Link></li>
-              <li className="p__original"><Link to="/interior">{t('navbar.intdesign')}</Link></li>
-            </ul>
-          )}
+        {/* Menu (No Dropdown) */}
+        <li className="app__navbar-item">
+          <Link to="/food-menu">{t('navbar.menu')}</Link> {/* Direct link to the menu */}
         </li>
 
-        {/* Desktop Franchise Dropdown */}
+        {/* Franchise Dropdown */}
         <li className="app__navbar-item"
             onMouseEnter={() => setFranchiseDropdown(true)}
             onMouseLeave={() => setFranchiseDropdown(false)}
@@ -71,13 +58,26 @@ const Navbar = () => {
           {franchiseDropdown && (
             <ul className="app__navbar-dropdown">
               <li className="p__original"><Link to="/contact">{t('navbar.contact')}</Link></li>
-              <li className="p__original"><Link to="/why-us">{t('navbar.whyUs')}</Link></li>
+              <li className="p__original"><Link to="/find-store">{t('navbar.locations')}</Link></li> {/* Link to Locations */}
+              <li className="p__original"><Link to="/interior">{t('navbar.intdesign')}</Link></li> {/* Link to Interior Design */}
             </ul>
           )}
         </li>
 
-        {/* Order Now Button */}
-        <li className="p__original"><a href="#order" className="order-button">Order Now</a></li>
+        {/* Order Now Dropdown */}
+        <li className="app__navbar-item"
+            onMouseEnter={() => setOrderDropdown(true)}
+            onMouseLeave={() => setOrderDropdown(false)}
+        >
+          <a href="#order" className="order-button">{t('navbar.orderOnline')}</a>
+          {orderDropdown && (
+            <ul className="app__navbar-dropdown">
+              <li className="p__original"><a href="https://www.doordash.com/store/jjamppong-zizon-los-angeles-29863494" target="_blank" rel="noopener noreferrer">DoorDash</a></li>
+              <li className="p__original"><a href="https://postmates.com/store/jjamppong-zizon-los-angeles/rbiMouFyWp-AmWxLOhSfUQ" target="_blank" rel="noopener noreferrer">Postmates</a></li>
+              <li className="p__original"><a href="https://www.ubereats.com/store/jjamppong-zizon-los-angeles/rbiMouFyWp-AmWxLOhSfUQ" target="_blank" rel="noopener noreferrer">UberEats</a></li>
+            </ul>
+          )}
+        </li>
       </ul>
 
       {/* Language switch buttons */}
@@ -86,35 +86,27 @@ const Navbar = () => {
         <button onClick={() => changeLanguage('ko')} className="language-button">KO</button>
       </div>
 
+      {/* Mobile Menu */}
       <div className="app__navbar-smallscreen">
         <GiHamburgerMenu color="white" fontSize={27} onClick={() => setToggleMenu(true)} />
         {toggleMenu && (
           <div className="app__navbar-smallscreen_overlay flex__center slide-bottom">
             <MdOutlineRestaurant fontSize={27} className="overlay_close" onClick={() => setToggleMenu(false)} />
             <ul className="app__navbar-smallscreen_links">
-
               {/* Small Screen About Dropdown */}
               <li className="p__spicy" onClick={() => setSmallDropdown(!smallDropdown)}>
                 {t('navbar.about')}
                 {smallDropdown && (
                   <ul className="app__navbar-smallscreen-dropdown">
-                    <li className="p__spicy"><Link to="/">{t('navbar.home')}</Link></li>
                     <li className="p__spicy"><Link to="/history">{t('navbar.history')}</Link></li>
-                    <li className="p__spicy"><Link to="/food-menu">{t('navbar.menu')}</Link></li>
                     <li className="p__spicy"><Link to="/news">{t('navbar.news')}</Link></li>
                   </ul>
                 )}
               </li>
 
-              {/* Small Screen Locations Dropdown */}
-              <li className="p__spicy" onClick={() => setSmallLocationDropdown(!smallLocationDropdown)}>
-                {t('navbar.store')}
-                {smallLocationDropdown && (
-                  <ul className="app__navbar-smallscreen-dropdown">
-                    <li className="p__spicy"><Link to="/find-store">{t('navbar.locations')}</Link></li>
-                    <li className="p__spicy"><Link to="/interior">{t('navbar.intdesign')}</Link></li>
-                  </ul>
-                )}
+              {/* Small Screen Menu */}
+              <li className="p__spicy">
+                <Link to="/food-menu">{t('navbar.menu')}</Link>
               </li>
 
               {/* Small Screen Franchise Dropdown */}
@@ -123,13 +115,23 @@ const Navbar = () => {
                 {smallFranchiseDropdown && (
                   <ul className="app__navbar-smallscreen-dropdown">
                     <li className="p__spicy"><Link to="/contact">{t('navbar.contact')}</Link></li>
-                    <li className="p__spicy"><Link to="/why-us">{t('navbar.whyUs')}</Link></li>
+                    <li className="p__spicy"><Link to="/find-store">{t('navbar.locations')}</Link></li>
+                    <li className="p__spicy"><Link to="/interior">{t('navbar.intdesign')}</Link></li>
                   </ul>
                 )}
               </li>
 
-            
-              <li className="p__spicy"><a href="#order" className="order-button">Order Now</a></li>
+              {/* Small Screen Order Now Dropdown */}
+              <li className="p__spicy" onClick={() => setSmallOrderDropdown(!smallOrderDropdown)}>
+                {t('navbar.orderOnline')}
+                {smallOrderDropdown && (
+                  <ul className="app__navbar-smallscreen-dropdown">
+                    <li className="p__spicy"><a href="https://www.doordash.com/store/jjamppong-zizon-los-angeles-29863494" target="_blank" rel="noopener noreferrer">DoorDash</a></li>
+                    <li className="p__spicy"><a href="https://postmates.com/store/jjamppong-zizon-los-angeles/rbiMouFyWp-AmWxLOhSfUQ" target="_blank" rel="noopener noreferrer">Postmates</a></li>
+                    <li className="p__spicy"><a href="https://www.ubereats.com/store/jjamppong-zizon-los-angeles/rbiMouFyWp-AmWxLOhSfUQ" target="_blank" rel="noopener noreferrer">UberEats</a></li>
+                  </ul>
+                )}
+              </li>
             </ul>
 
             {/* Mobile language switch buttons */}

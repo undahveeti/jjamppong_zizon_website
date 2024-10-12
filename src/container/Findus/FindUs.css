@@ -1,3 +1,14 @@
+/* Apply background image only for the Find Us page */
+.find-us-page {
+  background-image: url('../../assets/map.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional parallax effect */
+  min-height: 100vh; /* Ensure the background covers the full height */
+  padding: 60px 0; /* Add padding at the top and bottom */
+}
+
 /* General Table and Layout Styling */
 .store-table {
   background-color: white;
@@ -30,6 +41,7 @@
   font-weight: 600;
   text-transform: uppercase;
 }
+
 
 .store-table td img {
   border-radius: 10px;

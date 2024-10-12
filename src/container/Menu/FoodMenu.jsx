@@ -10,63 +10,63 @@ const FoodMenu = () => {
       id: 1,
       name: t('menu.dish1.name'),
       description: t('menu.dish1.description'),
-      price: '$19.00',
+      
       imgSrc: images.soup,
     },
     {
       id: 2,
       name: t('menu.dish2.name'),
       description: t('menu.dish2.description'),
-      price: '$19.00',
+      
       imgSrc: images.soup2,
     },
     {
       id: 3,
       name: t('menu.dish3.name'),
       description: t('menu.dish3.description'),
-      price: '$19.00',
+      
       imgSrc: images.soup3,
     },
     {
       id: 4,
       name: t('menu.dish4.name'),
       description: t('menu.dish4.description'),
-      price: '$19.00',
+     
       imgSrc: images.soup4,
     },
     {
       id: 5,
       name: t('menu.dish5.name'),
       description: t('menu.dish5.description'),
-      price: '$19.00',
+      
       imgSrc: images.soup5,
     },
     {
       id: 6,
       name: t('menu.dish6.name'),
       description: t('menu.dish6.description'),
-      price: '$13.00',
+      
       imgSrc: images.noodle,
     },
     {
       id: 7,
       name: t('menu.dish7.name'),
       description: t('menu.dish7.description'),
-      price: '$20.00',
+      
       imgSrc: images.combo,
     },
     {
       id: 8,
       name: t('menu.dish8.name'),
       description: t('menu.dish8.description'),
-      price: '$16.00',
+      
       imgSrc: images.crab,
     },
     {
       id: 9,
       name: t('menu.dish9.name'),
       description: t('menu.dish9.description'),
-      price: '$16.00',
+      
       imgSrc: images.shrimp,
     },
   ];
