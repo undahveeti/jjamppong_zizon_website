@@ -4,15 +4,24 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 require("dotenv").config({ path: './email.env' });
 
-
 const app = express();
-app.use(cors());
-app.use(bodyParser.json());
 
+// Set up CORS to allow requests only from your frontend domain
+const corsOptions = {
+  origin: 'http://jpzizonusa.com', // Update to match your frontend domain
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
+
+// Middleware to parse JSON and URL-encoded bodies
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Email route
 app.post("/send-email", (req, res) => {
   const { email, name, message, phoneNumber } = req.body;
 
-  // Format the message content with user details
+  // Format the email content
   const formattedMessage = `
     You have received a new message from your restaurant's franchising inquiry form:
     
@@ -22,20 +31,21 @@ app.post("/send-email", (req, res) => {
     Message: ${message}
   `;
 
-  // Create a transporter using the constant EMAIL_USER (your email account)
+  // Configure the transporter
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.EMAIL_USER, // Your constant email account used for sending
-      pass: process.env.EMAIL_PASS, // App-specific password for your email account
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
+  // Email options
   const mailOptions = {
-    from: `"${name}" <${email}>`, // The user's email (appears as the sender)
-    to: process.env.RECEIVER_EMAIL, // Your inbox (where you want to receive the form submission)
-    subject: `Franchising Inquiry from ${name}`, // Subject includes the user's name
-    text: formattedMessage, // The message body includes all the user details
+    from: `"${name}" <${email}>`,
+    to: process.env.RECEIVER_EMAIL,
+    subject: `Franchising Inquiry from ${name}`,
+    text: formattedMessage,
   };
 
   // Send the email
