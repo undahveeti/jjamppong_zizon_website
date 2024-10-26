@@ -23,7 +23,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5001/send-email", formData);
+      await axios.post("https://www.jpzizonusa.com/send-email", formData);
 
       setFormData({
         email: "",
