@@ -1,11 +1,28 @@
-.app__video-overlay_circle {
-    width: 100px; /* You can adjust the size of the container */
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%; /* Keeps the circle shape */
-    background-color: rgba(0, 0, 0, 0.4); /* Optional: Add a background for contrast */
-    cursor: pointer;
+/* General Styles (for Desktop and Larger Screens) */
+.app__video {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;  /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+}
+
+
+.app__video video {
+  width: 100vw;        /* Full width on desktop */
+  height: 100vh;       /* Full height on desktop */
+  object-fit: cover;   /* Ensures video fills the container */
+}
+
+
+/* Mobile Styles (for iPhone and Smaller Screens) */
+@media (max-width: 768px) {
+  .app__video {
+    overflow: hidden; /* Prevents overflow on smaller screens */
   }
-  
+ 
+  .app__video video {
+    width: 100vw;       /* Full viewport width */
+    height: auto;       /* Auto height to maintain aspect ratio */
+    object-fit: cover;  /* Fills container without distortion */
+  }
+}

@@ -1,48 +1,46 @@
-import React from 'react';
-
-import { meal } from '../../constants';
+import React, { useEffect, useRef } from 'react';
+import { intro } from '../../constants';
 import './Header.css';
-import zizon from '../../assets/zizon.PNG';  // Import your logo here (adjust the path as needed)
+
 
 const Header = () => {
-  const [playVideo, setPlayVideo] = React.useState(false);
-  const vidRef = React.useRef();
+  const vidRef = useRef();
+
+
+  useEffect(() => {
+    const playVideo = () => {
+      if (vidRef.current) {
+        vidRef.current
+          .play()
+          .catch((error) => {
+            console.log("Autoplay prevented:", error);
+          });
+      }
+    };
+
+
+    playVideo(); // Try to play on mount
+    document.addEventListener("visibilitychange", playVideo); // Retry if tab becomes visible
+
+
+    return () => document.removeEventListener("visibilitychange", playVideo);
+  }, []);
+
 
   return (
     <div className="app__video">
       <video
         ref={vidRef}
-        src={meal}
+        src={intro}
         type="video/mp4"
         loop
-        controls={false}
         muted
+        playsInline
+        controls={false}
       />
-      <div className="app__video-overlay flex__center">
-        <div
-          className="app__video-overlay_circle flex__center"
-          onClick={() => {
-            setPlayVideo(!playVideo);
-            if (playVideo) {
-              vidRef.current.pause();
-            } else {
-              vidRef.current.play();
-            }
-          }}
-        >
-          <img
-            src={zizon}
-            alt="play/pause logo"
-            style={{
-              width: '300px',  // Adjust the size of the logo
-              height: '100px',
-              cursor: 'pointer',
-            }}
-          />
-        </div>
-      </div>
     </div>
   );
 };
+
 
 export default Header;
