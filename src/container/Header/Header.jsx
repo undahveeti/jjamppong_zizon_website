@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { intro } from '../../constants';
+import { meal } from '../../constants';
 import './Header.css';
 
 
@@ -31,7 +31,7 @@ const Header = () => {
     <div className="app__video">
       <video
         ref={vidRef}
-        src={intro}
+        src={meal}
         type="video/mp4"
         loop
         muted

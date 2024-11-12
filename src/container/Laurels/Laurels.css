@@ -61,6 +61,52 @@
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Softer shadow for description */
 }
 
+
+/* Centered Instagram Icon Styling */
+.instagram-icon {
+  text-align: center;
+  margin-bottom: 20px; /* Adds space between icon and news content */
+}
+
+.instagram-link {
+  font-size: 3em;
+  color: #ffffff; /* White icon color for contrast */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #B22222; /* Fire red background color */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instagram-link:hover {
+  transform: scale(1.1);
+  background-color: #B22222; /* Darker fire red on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .instagram-link {
+    font-size: 2.5em;
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 576px) {
+  .instagram-link {
+    font-size: 2em;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
+
 .news-container:hover .news-caption {
   opacity: 1;
 }
