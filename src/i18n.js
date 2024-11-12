@@ -4,6 +4,7 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector'; // Language detection
 import Backend from 'i18next-http-backend'; // Backend to load translation files
 
+
 const resources = {
   en: {
     translation: {
@@ -145,10 +146,10 @@ const resources = {
       },
       footer: {
         contact: "Contact Us",
-        quote: "The best way to find yourself is to lose yourself in the service of others.",
+        quote: "Crafting unforgettable flavors, uncompromising quality, and heartfelt service in every moment.",
         workingHours: "Working Hours",
         days: "Monday-Sunday:",
-        hours: "10:00 am - 9:00 pm",
+        hours: "10:30 am - 9:00 pm",
         copyright: "2024 Zizon Jjampong. All Rights reserved.",
       },
       // other translations...
@@ -205,10 +206,10 @@ const resources = {
       },
       storeInfoButton: "매장 정보",
       businessHours: "영업 시간",
-      franchisee: "Mama Sue", 
+      franchisee: "Mama Sue",
       closeModal: "닫기",
     },
-    
+   
       laurels: {
         title1: "우리는 열기를 더하고 있어요!",
         description1: "Eater LA가 여름 개장을 다룹니다!",
@@ -225,7 +226,7 @@ const resources = {
       interiorPage: {
         slideTitle: "인테리어 디자인",  // Title for each slide
       },
-      
+     
       menu: {
         dish1: {
           name: "매운 해물 국수",
@@ -286,10 +287,10 @@ const resources = {
       },
       footer: {
         contact: "문의하기",
-        quote: "자신을 찾는 가장 좋은 방법은 타인을 돕는 것에 자신을 잃는 것입니다.",
+        quote: "매 순간 잊을 수 없는 맛, 변함없는 품질, 그리고 진심 어린 서비스를 제공합니다.",
         workingHours: "영업 시간",
         days: "월요일-일요일:",
-        hours: "오전 10:00 - 오후 9:00",
+        hours: "오전 10:30 - 오후 9:00",
         copyright: "2024 지존 짬뽕. 모든 권리 보유.",
       },
       contactPage: {
@@ -307,6 +308,7 @@ const resources = {
   },
 };
 
+
 i18n
   .use(Backend) // Load translations using HTTP backend
   .use(LanguageDetector) // Detect user language
@@ -320,4 +322,7 @@ i18n
     },
   });
 
+
 export default i18n;
+
+
