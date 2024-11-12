@@ -4,13 +4,18 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* For parallax effect */
-    min-height: 100vh; /* Ensure the background covers the full height */
+    background-attachment: fixed; /* Parallax effect */
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* The rest of your About Us page styles remain unchanged */
+
+/* Container styles */
 .about-us-container {
-    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for blending */
+    background-color: rgba(255, 255, 255, 0.95);
     padding: 40px;
     text-align: center;
     position: relative;
@@ -18,16 +23,22 @@
     max-width: 1200px;
     margin: 0 auto;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
- 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Rest of the CSS remains unchanged */
+
+/* Container hover effect */
+.about-us-container:hover {
+    transform: scale(1.02);
+}
 
 
+/* Header styling */
 .about-us-header {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
+
 
 .about-us-header h2 {
     font-size: 36px;
@@ -36,28 +47,42 @@
     font-weight: bold;
 }
 
+
+/* Promises section */
 .about-us-promises {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    gap: 40px;
     justify-items: center;
     align-items: center;
     margin: 0 auto;
 }
 
+
 .promise-item {
     text-align: center;
     padding: 20px;
+    background-color: rgba(255, 69, 0, 0.05); /* Subtle background color */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
+
+.promise-item:hover {
+    transform: scale(1.05);
+}
+
+
 .promise-image {
-    width: 120px;
+    width: 100px;
     height: auto;
 }
 
+
 .promise-text {
-    margin-top: 20px;
+    margin-top: 15px;
 }
+
 
 .promise-text h3 {
     font-size: 24px;
@@ -67,11 +92,13 @@
     font-weight: bold;
 }
 
+
 .promise-text p {
     font-size: 16px;
     color: #333;
     font-family: 'Georgia', serif;
 }
+
 
 /* Decorative Images */
 .top-images, .bottom-images {
@@ -79,6 +106,7 @@
     width: 100%;
     z-index: 0;
 }
+
 
 .top-images {
     top: 0;
@@ -89,6 +117,7 @@
     padding: 0 40px;
 }
 
+
 .bottom-images {
     bottom: 0;
     left: 0;
@@ -98,13 +127,15 @@
     padding-right: 40px;
 }
 
+
 .decorative-image {
-    opacity: 0.9;
+    opacity: 0.85;
     transition: transform 0.3s ease-in-out;
 }
 
+
 .pinky-promise {
-    width: 220px;
+    width: 180px;
     height: auto;
     position: absolute;
     left: 10%;
@@ -113,8 +144,9 @@
     transform: rotate(-5deg);
 }
 
+
 .noodles-top {
-    width: 240px;
+    width: 200px;
     height: auto;
     position: absolute;
     right: 10%;
@@ -123,8 +155,9 @@
     transform: rotate(5deg);
 }
 
+
 .chilies-bottom {
-    width: 280px;
+    width: 240px;
     height: auto;
     position: absolute;
     bottom: 10px;
@@ -133,26 +166,73 @@
     transform: rotate(-8deg);
 }
 
+
 /* Hover effect for images */
 .about-us-container:hover .decorative-image {
     transform: scale(1.05);
 }
 
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .about-us-promises {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
+
 
     .promise-item {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
-    .top-images, .bottom-images {
-        display: none;
-    }
 
     .about-us-header h2 {
         font-size: 28px;
     }
+
+
+    /* Hide decorative images on smaller screens */
+    .top-images, .bottom-images {
+        display: none;
+    }
 }
+
+
+@media (max-width: 480px) {
+    /* Adjust container padding for smaller screens */
+    .about-us-container {
+        padding: 20px;
+    }
+
+
+    .about-us-header h2 {
+        font-size: 24px;
+    }
+
+
+    .promise-text p {
+        font-size: 14px;
+    }
+
+
+    .promise-image {
+        width: 80px;
+    }
+
+
+    .about-us-promises {
+        gap: 15px;
+    }
+
+
+    .about-us-page {
+        padding: 15px;
+    }
+
+
+    .promise-item {
+        padding: 15px;
+    }
+}
+
+
