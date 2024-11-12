@@ -1,11 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { meal } from '../../constants';
 import './Header.css';
-
 
 const Header = () => {
   const vidRef = useRef();
-
+  const videoSrc = process.env.PUBLIC_URL + '/frontpagevideo.mp4';
 
   useEffect(() => {
     const playVideo = () => {
@@ -18,20 +16,17 @@ const Header = () => {
       }
     };
 
-
     playVideo(); // Try to play on mount
     document.addEventListener("visibilitychange", playVideo); // Retry if tab becomes visible
 
-
     return () => document.removeEventListener("visibilitychange", playVideo);
   }, []);
-
 
   return (
     <div className="app__video">
       <video
         ref={vidRef}
-        src={meal}
+        src={videoSrc}
         type="video/mp4"
         loop
         muted
@@ -41,6 +36,5 @@ const Header = () => {
     </div>
   );
 };
-
 
 export default Header;
