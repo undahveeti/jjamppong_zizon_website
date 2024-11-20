@@ -18,7 +18,8 @@ const Navbar = () => {
   const [smallOrderDropdown, setSmallOrderDropdown] = useState(false);
 
   const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
+    i18n.changeLanguage(lng); // Change language using i18next
+    setToggleMenu(false); // Close mobile menu
   };
 
   const handleLinkClick = () => {
@@ -56,7 +57,7 @@ const Navbar = () => {
           )}
         </li>
 
-        {/* Menu (No Dropdown) */}
+        {/* Menu */}
         <li className="app__navbar-item">
           <Link to="/food-menu">{t('navbar.menu')}</Link>
         </li>
@@ -178,8 +179,8 @@ const Navbar = () => {
 
             {/* Mobile language switch buttons */}
             <div className="app__navbar-language-smallscreen">
-              <button onClick={() => { changeLanguage('en'); setToggleMenu(false); }} className="language-button">EN</button>
-              <button onClick={() => { changeLanguage('kr'); setToggleMenu(false); }} className="language-button">KO</button>
+              <button onClick={() => changeLanguage('en')} className="language-button">EN</button>
+              <button onClick={() => changeLanguage('ko')} className="language-button">KO</button>
             </div>
           </div>
         )}
