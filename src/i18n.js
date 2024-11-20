@@ -55,6 +55,7 @@ const resources = {
           storeInfo: "Store Information",
           map: "Location Map",
         },
+        scrollReminder: "Scroll left or right to see more details!", // English
         storeInfoButton: "Store Information",
         businessHours: "Business Hours",
         franchisee: "Mama Sue",
@@ -204,6 +205,7 @@ const resources = {
         storeInfo: "매장 정보",
         map: "위치 지도",
       },
+      scrollReminder: "추가 정보를 보려면 왼쪽이나 오른쪽으로 스크롤하세요!", // Korean
       storeInfoButton: "매장 정보",
       businessHours: "영업 시간",
       franchisee: "Mama Sue",

@@ -126,6 +126,58 @@
       font-size: 1.1rem;
   }
 }
+/* Scroll Reminder */
+.scroll-reminder {
+  display: none;
+  text-align: center;
+  margin-top: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: var(--color-fire);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-reminder p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff; /* White text to contrast with the background */
+  margin-bottom: 0.5rem;
+}
+
+.scroll-arrows {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.scroll-arrows .arrow {
+  font-size: 1.5rem;
+  color: #fff; /* Match arrow color with the text */
+  animation: bounce 1.5s infinite;
+}
+
+.scroll-arrows .arrow:nth-child(odd) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Show reminder only on small screens */
+@media (max-width: 768px) {
+  .scroll-reminder {
+    display: block;
+  }
+}
 
 
 

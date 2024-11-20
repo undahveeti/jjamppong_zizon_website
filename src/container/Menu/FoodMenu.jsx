@@ -86,6 +86,14 @@ const FoodMenu = () => {
           </div>
         ))}
       </div>
+      {/* User-Friendly Scroll Reminder */}
+  <div className="scroll-reminder p__spicy">
+    <p>{t('findUsPage.scrollReminder')}</p>
+    <div className="scroll-arrows">
+      <span className="arrow">←</span>
+      <span className="arrow">→</span>
+    </div>
+  </div>
     </div>
   );
 };

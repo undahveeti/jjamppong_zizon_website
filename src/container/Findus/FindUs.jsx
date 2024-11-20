@@ -1,13 +1,16 @@
+
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { images } from '../../constants';
 import './FindUs.css';
+
 
 const FindUs = () => {
   const { t } = useTranslation(); // Initialize useTranslation hook
   const [selectedStore, setSelectedStore] = useState(null);
   const [hoveredImage, setHoveredImage] = useState(null);
   const [hoveredMap, setHoveredMap] = useState(null);
+
 
   const stores = [
     {
@@ -22,23 +25,26 @@ const FindUs = () => {
     },
     {
       id: 2,
-      name: 'Next One',
-      address: 'Somewhere in Denver',
-      phone: '999-999-9999',
-      franchisee: 'John Doe',
+      name: 'Coming Soon',
+      address: 'Denver',
+      phone: 'TBH',
+      franchisee: 'TBH',
       businessHours: 'Mon - Sun: 10:00am - 9:30pm',
       image: images.store2,
       mapLink: "https://www.google.com/maps/embed?pb=...DENVER_MAP_EMBED_URL..."
     },
   ];
 
+
   const openModal = (store) => {
     setSelectedStore(store);
   };
 
+
   const closeModal = () => {
     setSelectedStore(null);
   };
+
 
   return (
     <div className="find-us-page"> {/* Unique wrapper for Find Us page */}
@@ -77,12 +83,12 @@ const FindUs = () => {
                   onMouseLeave={() => setHoveredMap(null)}
                 >
                   {/* Embedded Google Map */}
-                  <iframe 
-                    src={store.mapLink} 
-                    width="250" 
-                    height="150" 
-                    style={{ border: 0 }} 
-                    allowFullScreen="" 
+                  <iframe
+                    src={store.mapLink}
+                    width="250"
+                    height="150"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title={`${store.name} Location Map`}
@@ -94,12 +100,14 @@ const FindUs = () => {
           </tbody>
         </table>
 
+
         {/* Hovered Enlarged Image */}
         {hoveredImage && (
           <div className="enlarged-overlay">
             <img src={hoveredImage} alt="Enlarged" className="enlarged-item" />
           </div>
         )}
+
 
         {/* Hovered Enlarged Map */}
         {hoveredMap && (
@@ -117,6 +125,7 @@ const FindUs = () => {
             ></iframe>
           </div>
         )}
+
 
         {/* Store Information Modal */}
         {selectedStore && (
@@ -148,8 +157,19 @@ const FindUs = () => {
           </div>
         )}
       </div>
+      
+    {/* User-Friendly Scroll Reminder */}
+  <div className="scroll-reminder p__spicy">
+    <p>{t('findUsPage.scrollReminder')}</p>
+    <div className="scroll-arrows">
+      <span className="arrow">←</span>
+      <span className="arrow">→</span>
     </div>
+  </div>
+    </div>
+    
   );
 };
+
 
 export default FindUs;
