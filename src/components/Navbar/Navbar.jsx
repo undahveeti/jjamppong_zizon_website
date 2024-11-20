@@ -179,7 +179,7 @@ const Navbar = () => {
             {/* Mobile language switch buttons */}
             <div className="app__navbar-language-smallscreen">
               <button onClick={() => { changeLanguage('en'); setToggleMenu(false); }} className="language-button">EN</button>
-              <button onClick={() => { changeLanguage('ko'); setToggleMenu(false); }} className="language-button">KO</button>
+              <button onClick={() => { changeLanguage('kr'); setToggleMenu(false); }} className="language-button">KO</button>
             </div>
           </div>
         )}
