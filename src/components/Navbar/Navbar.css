@@ -44,6 +44,13 @@
   gap: 10px;
 }
 
+.app__navbar-language-smallscreen {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+
 .language-button {
   padding: 0.5rem 1rem;
   font-size: 14px;
@@ -211,6 +218,9 @@
 /* Responsive Adjustments */
 @media (max-width: 1150px) {
   .app__navbar-links {
+    display: none;
+  }
+  .app__navbar-language {
     display: none;
   }
 

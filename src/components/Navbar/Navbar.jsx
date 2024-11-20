@@ -14,11 +14,18 @@ const Navbar = () => {
   const [smallDropdown, setSmallDropdown] = useState(false);
   const [franchiseDropdown, setFranchiseDropdown] = useState(false);
   const [smallFranchiseDropdown, setSmallFranchiseDropdown] = useState(false);
-  const [orderDropdown, setOrderDropdown] = useState(false); // Order dropdown for desktop
-  const [smallOrderDropdown, setSmallOrderDropdown] = useState(false); // Order dropdown for mobile
+  const [orderDropdown, setOrderDropdown] = useState(false);
+  const [smallOrderDropdown, setSmallOrderDropdown] = useState(false);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+  };
+
+  const handleLinkClick = () => {
+    setToggleMenu(false);
+    setSmallDropdown(false);
+    setSmallFranchiseDropdown(false);
+    setSmallOrderDropdown(false);
   };
 
   return (
@@ -31,50 +38,69 @@ const Navbar = () => {
 
       <ul className="app__navbar-links p__original">
         {/* About Us Dropdown */}
-        <li className="app__navbar-item"
-            onMouseEnter={() => setDropdown(true)}
-            onMouseLeave={() => setDropdown(false)}
+        <li
+          className="app__navbar-item"
+          onMouseEnter={() => setDropdown(true)}
+          onMouseLeave={() => setDropdown(false)}
         >
           {t('navbar.about')}
           {dropdown && (
             <ul className="app__navbar-dropdown">
-              <li className="p__original"><Link to="/history">{t('navbar.history')}</Link></li>
-              <li className="p__original"><Link to="/news">{t('navbar.news')}</Link></li>
+              <li className="p__original">
+                <Link to="/history">{t('navbar.history')}</Link>
+              </li>
+              <li className="p__original">
+                <Link to="/news">{t('navbar.news')}</Link>
+              </li>
             </ul>
           )}
         </li>
 
         {/* Menu (No Dropdown) */}
         <li className="app__navbar-item">
-          <Link to="/food-menu">{t('navbar.menu')}</Link> {/* Direct link to the menu */}
+          <Link to="/food-menu">{t('navbar.menu')}</Link>
         </li>
 
         {/* Franchise Dropdown */}
-        <li className="app__navbar-item"
-            onMouseEnter={() => setFranchiseDropdown(true)}
-            onMouseLeave={() => setFranchiseDropdown(false)}
+        <li
+          className="app__navbar-item"
+          onMouseEnter={() => setFranchiseDropdown(true)}
+          onMouseLeave={() => setFranchiseDropdown(false)}
         >
           {t('navbar.franchise')}
           {franchiseDropdown && (
             <ul className="app__navbar-dropdown">
-              <li className="p__original"><Link to="/contact">{t('navbar.contact')}</Link></li>
-              <li className="p__original"><Link to="/find-store">{t('navbar.locations')}</Link></li> {/* Link to Locations */}
-              <li className="p__original"><Link to="/interior">{t('navbar.intdesign')}</Link></li> {/* Link to Interior Design */}
+              <li className="p__original">
+                <Link to="/contact">{t('navbar.contact')}</Link>
+              </li>
+              <li className="p__original">
+                <Link to="/find-store">{t('navbar.locations')}</Link>
+              </li>
+              <li className="p__original">
+                <Link to="/interior">{t('navbar.intdesign')}</Link>
+              </li>
             </ul>
           )}
         </li>
 
         {/* Order Now Dropdown */}
-        <li className="app__navbar-item"
-            onMouseEnter={() => setOrderDropdown(true)}
-            onMouseLeave={() => setOrderDropdown(false)}
+        <li
+          className="app__navbar-item"
+          onMouseEnter={() => setOrderDropdown(true)}
+          onMouseLeave={() => setOrderDropdown(false)}
         >
           <a href="#order" className="order-button">{t('navbar.orderOnline')}</a>
           {orderDropdown && (
             <ul className="app__navbar-dropdown">
-              <li className="p__original"><a href="https://www.doordash.com/store/jjamppong-zizon-los-angeles-29863494" target="_blank" rel="noopener noreferrer">DoorDash</a></li>
-              <li className="p__original"><a href="https://postmates.com/store/jjamppong-zizon-los-angeles/rbiMouFyWp-AmWxLOhSfUQ" target="_blank" rel="noopener noreferrer">Postmates</a></li>
-              <li className="p__original"><a href="https://www.ubereats.com/store/jjamppong-zizon-los-angeles/rbiMouFyWp-AmWxLOhSfUQ" target="_blank" rel="noopener noreferrer">UberEats</a></li>
+              <li className="p__original">
+                <a href="https://www.doordash.com/store/jjamppong-zizon-los-angeles-29863494" target="_blank" rel="noopener noreferrer">DoorDash</a>
+              </li>
+              <li className="p__original">
+                <a href="https://postmates.com/store/jjamppong-zizon-los-angeles/rbiMouFyWp-AmWxLOhSfUQ" target="_blank" rel="noopener noreferrer">Postmates</a>
+              </li>
+              <li className="p__original">
+                <a href="https://www.ubereats.com/store/jjamppong-zizon-los-angeles/rbiMouFyWp-AmWxLOhSfUQ" target="_blank" rel="noopener noreferrer">UberEats</a>
+              </li>
             </ul>
           )}
         </li>
@@ -91,22 +117,26 @@ const Navbar = () => {
         <GiHamburgerMenu color="white" fontSize={27} onClick={() => setToggleMenu(true)} />
         {toggleMenu && (
           <div className="app__navbar-smallscreen_overlay flex__center slide-bottom">
-            <MdOutlineRestaurant fontSize={27} className="overlay_close" onClick={() => setToggleMenu(false)} />
+            <MdOutlineRestaurant fontSize={27} className="overlay_close" onClick={handleLinkClick} />
             <ul className="app__navbar-smallscreen_links">
               {/* Small Screen About Dropdown */}
               <li className="p__spicy" onClick={() => setSmallDropdown(!smallDropdown)}>
                 {t('navbar.about')}
                 {smallDropdown && (
                   <ul className="app__navbar-smallscreen-dropdown">
-                    <li className="p__spicy"><Link to="/history">{t('navbar.history')}</Link></li>
-                    <li className="p__spicy"><Link to="/news">{t('navbar.news')}</Link></li>
+                    <li className="p__spicy">
+                      <Link to="/history" onClick={handleLinkClick}>{t('navbar.history')}</Link>
+                    </li>
+                    <li className="p__spicy">
+                      <Link to="/news" onClick={handleLinkClick}>{t('navbar.news')}</Link>
+                    </li>
                   </ul>
                 )}
               </li>
 
               {/* Small Screen Menu */}
               <li className="p__spicy">
-                <Link to="/food-menu">{t('navbar.menu')}</Link>
+                <Link to="/food-menu" onClick={handleLinkClick}>{t('navbar.menu')}</Link>
               </li>
 
               {/* Small Screen Franchise Dropdown */}
@@ -114,9 +144,15 @@ const Navbar = () => {
                 {t('navbar.franchise')}
                 {smallFranchiseDropdown && (
                   <ul className="app__navbar-smallscreen-dropdown">
-                    <li className="p__spicy"><Link to="/contact">{t('navbar.contact')}</Link></li>
-                    <li className="p__spicy"><Link to="/find-store">{t('navbar.locations')}</Link></li>
-                    <li className="p__spicy"><Link to="/interior">{t('navbar.intdesign')}</Link></li>
+                    <li className="p__spicy">
+                      <Link to="/contact" onClick={handleLinkClick}>{t('navbar.contact')}</Link>
+                    </li>
+                    <li className="p__spicy">
+                      <Link to="/find-store" onClick={handleLinkClick}>{t('navbar.locations')}</Link>
+                    </li>
+                    <li className="p__spicy">
+                      <Link to="/interior" onClick={handleLinkClick}>{t('navbar.intdesign')}</Link>
+                    </li>
                   </ul>
                 )}
               </li>
@@ -126,9 +162,15 @@ const Navbar = () => {
                 {t('navbar.orderOnline')}
                 {smallOrderDropdown && (
                   <ul className="app__navbar-smallscreen-dropdown">
-                    <li className="p__spicy"><a href="https://www.doordash.com/store/jjamppong-zizon-los-angeles-29863494" target="_blank" rel="noopener noreferrer">DoorDash</a></li>
-                    <li className="p__spicy"><a href="https://postmates.com/store/jjamppong-zizon-los-angeles/rbiMouFyWp-AmWxLOhSfUQ" target="_blank" rel="noopener noreferrer">Postmates</a></li>
-                    <li className="p__spicy"><a href="https://www.ubereats.com/store/jjamppong-zizon-los-angeles/rbiMouFyWp-AmWxLOhSfUQ" target="_blank" rel="noopener noreferrer">UberEats</a></li>
+                    <li className="p__spicy">
+                      <a href="https://www.doordash.com/store/jjamppong-zizon-los-angeles-29863494" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>DoorDash</a>
+                    </li>
+                    <li className="p__spicy">
+                      <a href="https://postmates.com/store/jjamppong-zizon-los-angeles/rbiMouFyWp-AmWxLOhSfUQ" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>Postmates</a>
+                    </li>
+                    <li className="p__spicy">
+                      <a href="https://www.ubereats.com/store/jjamppong-zizon-los-angeles/rbiMouFyWp-AmWxLOhSfUQ" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>UberEats</a>
+                    </li>
                   </ul>
                 )}
               </li>
@@ -136,8 +178,8 @@ const Navbar = () => {
 
             {/* Mobile language switch buttons */}
             <div className="app__navbar-language-smallscreen">
-              <button onClick={() => changeLanguage('en')} className="language-button">EN</button>
-              <button onClick={() => changeLanguage('ko')} className="language-button">KO</button>
+              <button onClick={() => { changeLanguage('en'); setToggleMenu(false); }} className="language-button">EN</button>
+              <button onClick={() => { changeLanguage('ko'); setToggleMenu(false); }} className="language-button">KO</button>
             </div>
           </div>
         )}
