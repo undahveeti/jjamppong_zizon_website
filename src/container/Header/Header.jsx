@@ -13,7 +13,7 @@ const Header = () => {
   useEffect(() => {
     const updateVideoSource = () => {
       const isMobileScreen = window.innerWidth <= 768;
-      const mobileVideoSrc = process.env.PUBLIC_URL + '/editedsnip.mp4';
+      const mobileVideoSrc = process.env.PUBLIC_URL + '/finaleditsnip.mp4';
       const desktopVideoSrc = process.env.PUBLIC_URL + '/frontpagevideo.mp4';
 
       const selectedVideoSrc = isMobileScreen ? mobileVideoSrc : desktopVideoSrc;
