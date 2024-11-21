@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import zizonImage from '../../assets/zizon.png'; // Import Zizon logo
 import './Header.css';
 
 const Header = () => {
@@ -32,6 +31,27 @@ const Header = () => {
     return () => window.removeEventListener("resize", updateVideoSource);
   }, []);
 
+  // Prevent video from pausing during scrolling
+  useEffect(() => {
+    const preventPause = () => {
+      if (vidRef.current) {
+        vidRef.current.play().catch((error) => {
+          console.error("Error resuming video:", error);
+        });
+      }
+    };
+
+    if (vidRef.current) {
+      vidRef.current.addEventListener('pause', preventPause);
+    }
+
+    return () => {
+      if (vidRef.current) {
+        vidRef.current.removeEventListener('pause', preventPause);
+      }
+    };
+  }, []);
+
   // Handle video readiness
   const handleVideoReady = () => {
     setIsLoading(false); // Hide the loading indicator
@@ -55,11 +75,13 @@ const Header = () => {
       <video
         ref={vidRef}
         loop
-        muted // Always muted to autoplay
+        muted // Always muted for autoplay
         playsInline
         preload="metadata"
         className="video--playing"
         onCanPlayThrough={handleVideoReady} // Video is ready to play
+        onTouchStart={(e) => e.preventDefault()} // Prevent touch interruptions
+        onTouchMove={(e) => e.preventDefault()}
       >
         <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.
