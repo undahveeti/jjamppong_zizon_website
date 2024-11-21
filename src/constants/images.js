@@ -20,7 +20,7 @@ import award05 from '../assets/award05.png';
 import sign from '../assets/sign.png';
 import quote from '../assets/quote.png';
 import gericht from '../assets/gericht.png';
-import zizon from '../assets/zizon.PNG';
+import zizon from '../assets/zizon.png';
 import chilis from '../assets/chilis.PNG'
 import about from '../assets/about.PNG';
 import sale from '../assets/sale.png';
