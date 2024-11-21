@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import zizonImage from '../../assets/zizon.png'; // Import zizon image
+import zizonImage from '../../assets/zizon.png'; // Import Zizon logo
 import './Header.css';
 
 const Header = () => {
   const vidRef = useRef();
   const [videoSrc, setVideoSrc] = useState(""); // State to manage video source
-  const [playVideo, setPlayVideo] = useState(false); // State to manage play/pause toggle
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Detect if screen is mobile
   const [isLoading, setIsLoading] = useState(true); // State to track video loading
 
@@ -36,22 +35,10 @@ const Header = () => {
   // Handle video readiness
   const handleVideoReady = () => {
     setIsLoading(false); // Hide the loading indicator
-    if (!isMobile && vidRef.current) {
+    if (vidRef.current) {
       vidRef.current.play().catch((error) => {
         console.error("Autoplay prevented:", error);
       });
-    }
-  };
-
-  // Play/pause toggle for mobile
-  const togglePlayPause = () => {
-    setPlayVideo(!playVideo);
-    if (vidRef.current) {
-      if (playVideo) {
-        vidRef.current.pause();
-      } else {
-        vidRef.current.play();
-      }
     }
   };
 
@@ -68,36 +55,15 @@ const Header = () => {
       <video
         ref={vidRef}
         loop
-        muted={!isMobile} // Only unmute for desktop
+        muted // Always muted to autoplay
         playsInline
-        controls={false}
         preload="metadata"
-        className={playVideo ? 'video--playing' : 'video--paused'} // Conditional class
+        className="video--playing"
         onCanPlayThrough={handleVideoReady} // Video is ready to play
       >
         <source src={videoSrc} type="video/mp4" />
-        <source src={videoSrc.replace(".mp4", ".webm")} type="video/webm" />
         Your browser does not support the video tag.
       </video>
-
-      {/* Play Button and Logo for Mobile */}
-      {isMobile && !playVideo && (
-        <div className="app__video-overlay flex__center">
-          <div className="app__logo-container">
-            <img
-              src={zizonImage}
-              alt="Zizon Logo"
-              className="app__logo"
-            />
-            <div
-              className="app__play-button flex__center"
-              onClick={togglePlayPause}
-            >
-              Play
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
