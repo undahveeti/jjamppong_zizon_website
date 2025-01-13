@@ -19,7 +19,7 @@ const FindUs = () => {
       address: '3446 Wilshire Blvd, Los Angeles, CA 90010',
       phone: '(213) 263-9527',
       franchisee: 'Mama Sue',
-      businessHours: 'Mon - Sun: 10:30am - 9:00pm',
+      businessHours: 'Mon - Sun: 10:30am - 12:00am',
       image: images.about,
       mapLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.3184702780736!2d-118.30202622382234!3d34.061349517248686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b98820acdc7d%3A0x540ce7f27b248b79!2zSmphbXBwb25nIHppem9uICgg7Kes672VIOyngOyhtCBMQSAp!5e0!3m2!1sen!2sus!4v1726639008597!5m2!1sen!2sus"
     },
@@ -29,7 +29,7 @@ const FindUs = () => {
       address: 'Denver',
       phone: 'TBH',
       franchisee: 'TBH',
-      businessHours: 'Mon - Sun: 10:00am - 9:30pm',
+      businessHours: 'Mon - Sun: 10:00am - 12:00am',
       image: images.store2,
       mapLink: "https://www.google.com/maps/embed?pb=...DENVER_MAP_EMBED_URL..."
     },

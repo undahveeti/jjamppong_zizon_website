@@ -66,6 +66,8 @@ const resources = {
         description1: "Eater LA covers our summer opening!",
         title2: "Craving the perfect comfort meal?",
         description2: "Our delicious Jjangmyeon is on special sale! 7 days a week!",
+        title3: "Are you brave enough to take our food challenge?",
+        description3: "Finish our level 12 Spicy Hellfire JJamppon for a free entree!"
       },
       specialmenu: {
         title: "Drinks & Beverages",
@@ -150,7 +152,7 @@ const resources = {
         quote: "Crafting unforgettable flavors, uncompromising quality, and heartfelt service in every moment.",
         workingHours: "Working Hours",
         days: "Monday-Sunday:",
-        hours: "10:30 am - 9:00 pm",
+        hours: "10:30 am - 12:00 am",
         copyright: "2024 Zizon Jjampong. All Rights reserved.",
       },
       // other translations...
@@ -212,12 +214,14 @@ const resources = {
       closeModal: "닫기",
     },
    
-      laurels: {
-        title1: "우리는 열기를 더하고 있어요!",
-        description1: "Eater LA가 여름 개장을 다룹니다!",
-        title2: "완벽한 안락식을 원하시나요?",
-        description2: "맛있는 짜장면이 특별 세일 중입니다! 주 7일!",
-      },
+    laurels: {
+      title1: "우리는 열기를 더하고 있어요!",
+      description1: "Eater LA가 여름 개장을 다룹니다!",
+      title2: "완벽한 안락식을 원하시나요?",
+      description2: "맛있는 짜장면이 특별 세일 중입니다! 주 7일!",
+      title3: "우리 음식 도전에 도전할 용기가 있나요?",
+      description3: "레벨 12 스파이시 헬파이어 짬뽕을 완성하면 무료 앙트레를 드립니다!"
+  },
       specialmenu: {
         title: "음료 & 주류",
         drink1: "소주 (참이슬, 처음처럼, 진로)",
@@ -292,7 +296,7 @@ const resources = {
         quote: "매 순간 잊을 수 없는 맛, 변함없는 품질, 그리고 진심 어린 서비스를 제공합니다.",
         workingHours: "영업 시간",
         days: "월요일-일요일:",
-        hours: "오전 10:30 - 오후 9:00",
+        hours: "오전 10:30 - 오전 12:00",
         copyright: "2024 지존 짬뽕. 모든 권리 보유.",
       },
       contactPage: {

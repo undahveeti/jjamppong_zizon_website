@@ -1,91 +1,69 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { FiInstagram } from 'react-icons/fi';
 import './Header.css';
 
+import saleImage from '../../assets/sale.png';
+import twitterImage from '../../assets/twitter.png';
+import challengeImage from '../../assets/challenge.png'
+
 const Header = () => {
-  const vidRef = useRef();
-  const [videoSrc, setVideoSrc] = useState(""); // State to manage video source
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Detect if screen is mobile
-  const [isLoading, setIsLoading] = useState(true); // State to track video loading
+  const { t } = useTranslation();
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Update the video source based on screen size
+  const newsData = [
+    {
+      image: twitterImage,
+      title: t('laurels.title1'),
+      description: t('laurels.description1'),
+      link: 'https://la.eater.com/2024/6/3/24170495/jjamppong-zizon-korean-noodle-chain-los-angeles-koreatown?utm_source=eater-twitter&utm_medium=social&utm_campaign=eater-dashhudson&utm_content=eater-national-twitter',
+    },
+    {
+      image: saleImage,
+      title: t('laurels.title2'),
+      description: t('laurels.description2'),
+      link: 'https://www.instagram.com/p/C_OPb3sPrTX/',
+    },
+    {
+      image: challengeImage,
+      title: t('laurels.title3'),
+      description: t('laurels.description3'),
+      link: 'https://www.instagram.com/p/DC4jrdsyS0X/',
+    },
+  ];
+
   useEffect(() => {
-    const updateVideoSource = () => {
-      const isMobileScreen = window.innerWidth <= 768;
-      const mobileVideoSrc = process.env.PUBLIC_URL + '/finaleditsnip.mp4';
-      const desktopVideoSrc = process.env.PUBLIC_URL + '/frontpagevideo.mp4';
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === newsData.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000);
 
-      const selectedVideoSrc = isMobileScreen ? mobileVideoSrc : desktopVideoSrc;
-      setIsMobile(isMobileScreen);
-      setVideoSrc(selectedVideoSrc);
-
-      if (vidRef.current) {
-        vidRef.current.pause();
-        vidRef.current.src = selectedVideoSrc; // Directly set video source
-        vidRef.current.load(); // Reload video
-      }
-    };
-
-    updateVideoSource(); // Set initial video source
-    window.addEventListener("resize", updateVideoSource);
-
-    return () => window.removeEventListener("resize", updateVideoSource);
-  }, []);
-
-  // Prevent video from pausing during scrolling
-  useEffect(() => {
-    const preventPause = () => {
-      if (vidRef.current) {
-        vidRef.current.play().catch((error) => {
-          console.error("Error resuming video:", error);
-        });
-      }
-    };
-
-    if (vidRef.current) {
-      vidRef.current.addEventListener('pause', preventPause);
-    }
-
-    return () => {
-      if (vidRef.current) {
-        vidRef.current.removeEventListener('pause', preventPause);
-      }
-    };
-  }, []);
-
-  // Handle video readiness
-  const handleVideoReady = () => {
-    setIsLoading(false); // Hide the loading indicator
-    if (vidRef.current) {
-      vidRef.current.play().catch((error) => {
-        console.error("Autoplay prevented:", error);
-      });
-    }
-  };
+    return () => clearInterval(interval);
+  }, [newsData.length]);
 
   return (
-    <div className="app__video">
-      {/* Loading Spinner */}
-      {isLoading && (
-        <div className="app__video-loading">
-          <div className="spinner"></div>
-        </div>
-      )}
+    <div className="news-gallery app__bg" id="news">
 
-      {/* Video Element */}
-      <video
-        ref={vidRef}
-        loop
-        muted // Always muted for autoplay
-        playsInline
-        preload="metadata"
-        className="video--playing"
-        onCanPlayThrough={handleVideoReady} // Video is ready to play
-        onTouchStart={(e) => e.preventDefault()} // Prevent touch interruptions
-        onTouchMove={(e) => e.preventDefault()}
+      {/* News Data Content */}
+      <a
+        href={newsData[currentIndex].link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="news-link"
       >
-        <source src={videoSrc} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+        <div className="news-container">
+          <img
+            src={newsData[currentIndex].image}
+            alt={newsData[currentIndex].title}
+            className="news-image"
+          />
+          <div className="news-caption">
+            <h2>{newsData[currentIndex].title}</h2>
+            <p>{newsData[currentIndex].description}</p>
+          </div>
+        </div>
+      </a>
     </div>
   );
 };

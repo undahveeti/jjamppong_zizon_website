@@ -5,6 +5,7 @@ import './Laurels.css';
 
 import saleImage from '../../assets/sale.png';
 import twitterImage from '../../assets/twitter.png';
+import challengeImage from '../../assets/challenge.png'
 
 const Laurels = () => {
   const { t } = useTranslation();
@@ -22,6 +23,12 @@ const Laurels = () => {
       title: t('laurels.title2'),
       description: t('laurels.description2'),
       link: 'https://www.instagram.com/p/C_OPb3sPrTX/',
+    },
+    {
+      image: challengeImage,
+      title: t('laurels.title3'),
+      description: t('laurels.description3'),
+      link: 'https://www.instagram.com/p/DC4jrdsyS0X/',
     },
   ];
 
