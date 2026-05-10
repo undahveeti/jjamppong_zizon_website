@@ -23,6 +23,8 @@ import gericht from '../assets/gericht.png';
 import zizon from '../assets/zizon.png';
 import chilis from '../assets/chilis.PNG'
 import about from '../assets/about.PNG';
+import about1 from '../assets/about1.png';
+import about12 from '../assets/about12.png';
 import sale from '../assets/sale.png';
 import twitter from '../assets/twitter.png';
 import aboutmore from '../assets/about2.png';
@@ -86,6 +88,8 @@ export default {
   twitter,
   sale,
   about,
+  about1,
+  about12,
   bg,
   chef,
   G,

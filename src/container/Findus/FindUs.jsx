@@ -16,12 +16,12 @@ const FindUs = () => {
     {
       id: 1,
       name: 'JNS International',
-      address: '3181 Flores St, Santa Fe Springs, CA 90670',
+      address: '13181 Flores St, Santa Fe Springs, CA 90670',
       phone: '',
       franchisee: 'JNS International',
       businessHours: 'Coming Soon',
       image: images.about,
-      mapLink: 'https://maps.google.com/maps?q=3181%20Flores%20St%2C%20Santa%20Fe%20Springs%2C%20CA%2090670&output=embed',
+      mapLink: 'https://maps.google.com/maps?q=13181%20Flores%20St%2C%20Santa%20Fe%20Springs%2C%20CA%2090670&output=embed',
     },
     {
       id: 2,
@@ -40,7 +40,7 @@ const FindUs = () => {
       phone: '(470) 897-9982',
       franchisee: 'NALKKONG LLC',
       businessHours: 'Mon - Sun: 10:30am - 12:00am',
-      image: images.about,
+      image: images.about12,
       mapLink: 'https://maps.google.com/maps?q=2106%20Pleasant%20Hill%20Rd%2C%20A3%2C%20Duluth%2C%20GA%2030096&output=embed',
     },
     {
@@ -80,7 +80,7 @@ const FindUs = () => {
       phone: '(725) 343-1516',
       franchisee: 'JP Zizon-LV Inc.',
       businessHours: 'Mon - Sun: 10:30am - 12:00am',
-      image: images.about,
+      image: images.about1,
       mapLink: 'https://maps.google.com/maps?q=4545%20Spring%20Mountain%20Rd%2C%20Ste%20101%2C%20Las%20Vegas%2C%20NV%2089103&output=embed',
     },
     {
